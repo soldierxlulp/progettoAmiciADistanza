@@ -12,7 +12,7 @@ public class ProdottoDAO extends HttpServlet {
         ArrayList<Prodotto> elencoProdotti = new ArrayList<Prodotto>();
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT idProdotto, nomeCategoria,nomeProd,descrizione,larghezza, lunghezza,prezzo, quantita, tipoMaterialeMaterasso,coloreLetto, materialeRete, rivestimentoDivano, coloreDivano, tipoStoffaCuscino, materialeCuscino, formaCuscino FROM Prodotto WHERE nomeCategoria LIKE ?");
+                    con.prepareStatement("SELECT idProdotto, nomeCategoria,nomeProd,descrizione,prezzo, quantita  FROM Prodotto WHERE nomeCategoria LIKE ?");
             ps.setString(1, categoria.concat("%"));
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -21,18 +21,8 @@ public class ProdottoDAO extends HttpServlet {
                 p.setNomeCategoria(rs.getString(2));
                 p.setNomeProd(rs.getString(3));
                 p.setDescrizione(rs.getString(4));
-                p.setLarghezza(rs.getDouble(5));
-                p.setLunghezza(rs.getDouble(6));
-                p.setPrezzo(rs.getDouble(7));
-                p.setQuantita(rs.getInt(8));
-                p.setTipoMaterialeMaterasso(rs.getString(9));
-                p.setColoreLetto(rs.getString(10));
-                p.setMaterialeRete(rs.getString(11));
-                p.setRivestimentoDivano(rs.getString(12));
-                p.setColoreDivano(rs.getString(13));
-                p.setTipoStoffaCuscino(rs.getString(14));
-                p.setMaterialeCuscino(rs.getString(15));
-                p.setFormaCuscino(rs.getString(16));
+                p.setPrezzo(rs.getDouble(5));
+                p.setQuantita(rs.getInt(6));
                 elencoProdotti.add(p);
             }
             return elencoProdotti;
@@ -46,7 +36,7 @@ public class ProdottoDAO extends HttpServlet {
         ArrayList<Prodotto> elencoProdotti = new ArrayList<Prodotto>();
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT idProdotto, nomeCategoria,nomeProd,descrizione,larghezza, lunghezza,prezzo, quantita, tipoMaterialeMaterasso,coloreLetto, materialeRete, rivestimentoDivano, coloreDivano, tipoStoffaCuscino, materialeCuscino, formaCuscino FROM Prodotto");
+                    con.prepareStatement("SELECT idProdotto, nomeCategoria,nomeProd,descrizione,prezzo, quantita FROM Prodotto");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Prodotto p = new Prodotto();
@@ -54,18 +44,8 @@ public class ProdottoDAO extends HttpServlet {
                 p.setNomeCategoria(rs.getString(2));
                 p.setNomeProd(rs.getString(3));
                 p.setDescrizione(rs.getString(4));
-                p.setLarghezza(rs.getDouble(5));
-                p.setLunghezza(rs.getDouble(6));
-                p.setPrezzo(rs.getDouble(7));
-                p.setQuantita(rs.getInt(8));
-                p.setTipoMaterialeMaterasso(rs.getString(9));
-                p.setColoreLetto(rs.getString(10));
-                p.setMaterialeRete(rs.getString(11));
-                p.setRivestimentoDivano(rs.getString(12));
-                p.setColoreDivano(rs.getString(13));
-                p.setTipoStoffaCuscino(rs.getString(14));
-                p.setMaterialeCuscino(rs.getString(15));
-                p.setFormaCuscino(rs.getString(16));
+                p.setPrezzo(rs.getDouble(5));
+                p.setQuantita(rs.getInt(6));
                 elencoProdotti.add(p);
             }
             return elencoProdotti;
@@ -78,7 +58,7 @@ public class ProdottoDAO extends HttpServlet {
         ArrayList<Prodotto> elencoLetti = new ArrayList<Prodotto>();
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT idProdotto, nomeCategoria,nomeProd,descrizione,larghezza, lunghezza,prezzo, quantita, tipoMaterialeMaterasso,coloreLetto, materialeRete, rivestimentoDivano, coloreDivano, tipoStoffaCuscino, materialeCuscino, formaCuscino FROM Prodotto WHERE nomeCategoria LIKE ? AND prezzo>= ? AND prezzo<= ?");
+                    con.prepareStatement("SELECT idProdotto, nomeCategoria,nomeProd,descrizione,prezzo, quantita FROM Prodotto WHERE nomeCategoria LIKE ? AND prezzo>= ? AND prezzo<= ?");
             ps.setString(1, categoria.substring(0, categoria.length() - 1).concat("%"));
             ps.setDouble(2, min);
             ps.setDouble(3, max);
@@ -89,18 +69,8 @@ public class ProdottoDAO extends HttpServlet {
                 p.setNomeCategoria(rs.getString(2));
                 p.setNomeProd(rs.getString(3));
                 p.setDescrizione(rs.getString(4));
-                p.setLarghezza(rs.getDouble(5));
-                p.setLunghezza(rs.getDouble(6));
-                p.setPrezzo(rs.getDouble(7));
-                p.setQuantita(rs.getInt(8));
-                p.setTipoMaterialeMaterasso(rs.getString(9));
-                p.setColoreLetto(rs.getString(10));
-                p.setMaterialeRete(rs.getString(11));
-                p.setRivestimentoDivano(rs.getString(12));
-                p.setColoreDivano(rs.getString(13));
-                p.setTipoStoffaCuscino(rs.getString(14));
-                p.setMaterialeCuscino(rs.getString(15));
-                p.setFormaCuscino(rs.getString(16));
+                p.setPrezzo(rs.getDouble(5));
+                p.setQuantita(rs.getInt(6));
                 elencoLetti.add(p);
             }
             return elencoLetti;
@@ -113,7 +83,7 @@ public class ProdottoDAO extends HttpServlet {
         Prodotto p = new Prodotto();
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT idProdotto, nomeCategoria,nomeProd,descrizione,larghezza, lunghezza,prezzo, quantita, tipoMaterialeMaterasso,coloreLetto, materialeRete, rivestimentoDivano, coloreDivano, tipoStoffaCuscino, materialeCuscino, formaCuscino FROM Prodotto WHERE upper(nomeProd) LIKE ?");
+                    con.prepareStatement("SELECT idProdotto, nomeCategoria,nomeProd,descrizione,prezzo, quantita FROM Prodotto WHERE upper(nomeProd) LIKE ?");
             ps.setString(1, nome.concat("%"));
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
@@ -121,18 +91,8 @@ public class ProdottoDAO extends HttpServlet {
                 p.setNomeCategoria(rs.getString(2));
                 p.setNomeProd(rs.getString(3));
                 p.setDescrizione(rs.getString(4));
-                p.setLarghezza(rs.getDouble(5));
-                p.setLunghezza(rs.getDouble(6));
-                p.setPrezzo(rs.getDouble(7));
-                p.setQuantita(rs.getInt(8));
-                p.setTipoMaterialeMaterasso(rs.getString(9));
-                p.setColoreLetto(rs.getString(10));
-                p.setMaterialeRete(rs.getString(11));
-                p.setRivestimentoDivano(rs.getString(12));
-                p.setColoreDivano(rs.getString(13));
-                p.setTipoStoffaCuscino(rs.getString(14));
-                p.setMaterialeCuscino(rs.getString(15));
-                p.setFormaCuscino(rs.getString(16));
+                p.setPrezzo(rs.getDouble(5));
+                p.setQuantita(rs.getInt(6));
             }
             return p;
         } catch (SQLException e) {
@@ -170,110 +130,17 @@ public class ProdottoDAO extends HttpServlet {
         }
     }
 
-    public static ArrayList<Prodotto> doRetriveMaterialeMaterasso(String materiale) {
-        ArrayList<Prodotto> elencoMaterassi = new ArrayList<Prodotto>();
-        try (Connection con = ConPool.getConnection()) {
-            PreparedStatement ps =
-                    con.prepareStatement("SELECT idProdotto, nomeCategoria,nomeProd,descrizione,larghezza, lunghezza,prezzo, quantita, tipoMaterialeMaterasso,coloreLetto, materialeRete, rivestimentoDivano, coloreDivano, tipoStoffaCuscino, materialeCuscino, formaCuscino FROM Prodotto WHERE tipoMaterialeMaterasso=?");
-            ps.setString(1, materiale);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Prodotto p = new Prodotto();
-                p.setIdProdotto(rs.getString(1));
-                p.setNomeCategoria(rs.getString(2));
-                p.setNomeProd(rs.getString(3));
-                p.setDescrizione(rs.getString(4));
-                p.setLarghezza(rs.getDouble(5));
-                p.setLunghezza(rs.getDouble(6));
-                p.setPrezzo(rs.getDouble(7));
-                p.setQuantita(rs.getInt(8));
-                p.setTipoMaterialeMaterasso(rs.getString(9));
-                p.setColoreLetto(rs.getString(10));
-                p.setMaterialeRete(rs.getString(11));
-                p.setRivestimentoDivano(rs.getString(12));
-                p.setColoreDivano(rs.getString(13));
-                p.setTipoStoffaCuscino(rs.getString(14));
-                p.setMaterialeCuscino(rs.getString(15));
-                p.setFormaCuscino(rs.getString(16));
-                elencoMaterassi.add(p);
-            }
-            return elencoMaterassi;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
-    public static ArrayList<Prodotto> doRetriveMaterialeRete(String materiale) {
-        ArrayList<Prodotto> elencoReti = new ArrayList<Prodotto>();
-        try (Connection con = ConPool.getConnection()) {
-            PreparedStatement ps =
-                    con.prepareStatement("SELECT idProdotto, nomeCategoria,nomeProd,descrizione,larghezza, lunghezza,prezzo, quantita, tipoMaterialeMaterasso,coloreLetto, materialeRete, rivestimentoDivano, coloreDivano, tipoStoffaCuscino, materialeCuscino, formaCuscino FROM Prodotto WHERE materialeRete=?");
-            ps.setString(1, materiale);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Prodotto p = new Prodotto();
-                p.setIdProdotto(rs.getString(1));
-                p.setNomeCategoria(rs.getString(2));
-                p.setNomeProd(rs.getString(3));
-                p.setDescrizione(rs.getString(4));
-                p.setLarghezza(rs.getDouble(5));
-                p.setLunghezza(rs.getDouble(6));
-                p.setPrezzo(rs.getDouble(7));
-                p.setQuantita(rs.getInt(8));
-                p.setTipoMaterialeMaterasso(rs.getString(9));
-                p.setColoreLetto(rs.getString(10));
-                p.setMaterialeRete(rs.getString(11));
-                p.setRivestimentoDivano(rs.getString(12));
-                p.setColoreDivano(rs.getString(13));
-                p.setTipoStoffaCuscino(rs.getString(14));
-                p.setMaterialeCuscino(rs.getString(15));
-                p.setFormaCuscino(rs.getString(16));
-                elencoReti.add(p);
-            }
-            return elencoReti;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
-    public static ArrayList<Prodotto> doRetriveMaterialeCuscino(String materiale) {
-        ArrayList<Prodotto> elencoCuscini = new ArrayList<Prodotto>();
-        try (Connection con = ConPool.getConnection()) {
-            PreparedStatement ps =
-                    con.prepareStatement("SELECT idProdotto, nomeCategoria,nomeProd,descrizione,larghezza, lunghezza,prezzo, quantita, tipoMaterialeMaterasso,coloreLetto, materialeRete, rivestimentoDivano, coloreDivano, tipoStoffaCuscino, materialeCuscino, formaCuscino FROM Prodotto WHERE materialeCuscino=?");
-            ps.setString(1, materiale);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Prodotto p = new Prodotto();
-                p.setIdProdotto(rs.getString(1));
-                p.setNomeCategoria(rs.getString(2));
-                p.setNomeProd(rs.getString(3));
-                p.setDescrizione(rs.getString(4));
-                p.setLarghezza(rs.getDouble(5));
-                p.setLunghezza(rs.getDouble(6));
-                p.setPrezzo(rs.getDouble(7));
-                p.setQuantita(rs.getInt(8));
-                p.setTipoMaterialeMaterasso(rs.getString(9));
-                p.setColoreLetto(rs.getString(10));
-                p.setMaterialeRete(rs.getString(11));
-                p.setRivestimentoDivano(rs.getString(12));
-                p.setColoreDivano(rs.getString(13));
-                p.setTipoStoffaCuscino(rs.getString(14));
-                p.setMaterialeCuscino(rs.getString(15));
-                p.setFormaCuscino(rs.getString(16));
-                elencoCuscini.add(p);
-            }
-            return elencoCuscini;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
+
+
+
 
     public static ArrayList<Prodotto> doRetriveQuantitaEsaurita() {
         ArrayList<Prodotto> prodottiEsauriti = new ArrayList<Prodotto>();
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT idProdotto, nomeCategoria,nomeProd,descrizione,larghezza, lunghezza,prezzo, quantita, tipoMaterialeMaterasso,coloreLetto, materialeRete, rivestimentoDivano, coloreDivano, tipoStoffaCuscino, materialeCuscino, formaCuscino FROM Prodotto WHERE quantita=0");
+                    con.prepareStatement("SELECT idProdotto, nomeCategoria,nomeProd,descrizione,prezzo, quantita FROM Prodotto WHERE quantita=0");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Prodotto p = new Prodotto();
@@ -281,18 +148,8 @@ public class ProdottoDAO extends HttpServlet {
                 p.setNomeCategoria(rs.getString(2));
                 p.setNomeProd(rs.getString(3));
                 p.setDescrizione(rs.getString(4));
-                p.setLarghezza(rs.getDouble(5));
-                p.setLunghezza(rs.getDouble(6));
-                p.setPrezzo(rs.getDouble(7));
-                p.setQuantita(rs.getInt(8));
-                p.setTipoMaterialeMaterasso(rs.getString(9));
-                p.setColoreLetto(rs.getString(10));
-                p.setMaterialeRete(rs.getString(11));
-                p.setRivestimentoDivano(rs.getString(12));
-                p.setColoreDivano(rs.getString(13));
-                p.setTipoStoffaCuscino(rs.getString(14));
-                p.setMaterialeCuscino(rs.getString(15));
-                p.setFormaCuscino(rs.getString(16));
+                p.setPrezzo(rs.getDouble(5));
+                p.setQuantita(rs.getInt(6));
                 prodottiEsauriti.add(p);
             }
             return prodottiEsauriti;
@@ -318,26 +175,15 @@ public class ProdottoDAO extends HttpServlet {
 
     public static void aggiuntaProdotto(Prodotto p) {
         try (Connection con = ConPool.getConnection()) {
-            PreparedStatement ps = con.prepareStatement("INSERT INTO Prodotto (idProdotto,nomeCategoria,nomeProd,descrizione,larghezza,lunghezza,prezzo,quantita,tipoMaterialeMaterasso ,coloreLetto ,materialeRete,rivestimentoDivano,coloreDivano,tipoStoffaCuscino,materialeCuscino,formaCuscino) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            PreparedStatement ps = con.prepareStatement("INSERT INTO Prodotto (idProdotto,nomeCategoria,nomeProd,descrizione,prezzo,quantita) VALUES (?,?,?,?,?,?)",
                     Statement.RETURN_GENERATED_KEYS);
 
             ps.setString(1, p.getIdProdotto());
             ps.setString(2, p.getNomeCategoria());
             ps.setString(3, p.getNomeProd());
             ps.setString(4, p.getDescrizione());
-            ps.setDouble(5, p.getLarghezza());
-            ps.setDouble(6, p.getLunghezza());
-            ps.setDouble(7, p.getPrezzo());
-            ps.setInt(8, p.getQuantita());
-            ps.setString(9, p.getTipologiaMaterasso());
-            ps.setString(10, p.getColoreLetto());
-            ps.setString(11, p.getMaterialeRete());
-            ps.setString(12, p.getRivestimentoDivano());
-            ps.setString(13, p.getColoreDivano());
-            ps.setString(14, p.getTipoStoffaCuscino());
-            ps.setString(15, p.getMaterialeCuscino());
-            ps.setString(16,p.getFormaCuscino());
-
+            ps.setDouble(5, p.getPrezzo());
+            ps.setInt(6, p.getQuantita());
 
             if (ps.executeUpdate() != 1)
                 throw new RuntimeException("Errore nel definire il prodotto");

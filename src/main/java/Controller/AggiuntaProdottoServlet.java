@@ -1,11 +1,11 @@
 package Controller;
 
-import Model.Prodotto;
-import Model.ProdottoDAO;
-import Model.Utente;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
@@ -23,18 +23,8 @@ public class AggiuntaProdottoServlet extends HttpServlet {
         p.setNomeCategoria(request.getParameter("nomeCategoria"));
         p.setNomeProd(request.getParameter("nomeProdotto"));
         p.setDescrizione(request.getParameter("descrizione"));
-        p.setLarghezza(Double.parseDouble(request.getParameter("larghezza")));
-        p.setLunghezza(Double.parseDouble(request.getParameter("lunghezza")));
         p.setPrezzo(Double.parseDouble(request.getParameter("prezzo")));
         p.setQuantita(Integer.parseInt(request.getParameter("quantita")));
-        p.setTipoMaterialeMaterasso(request.getParameter("tipoMaterialeMaterasso"));
-        p.setColoreLetto(request.getParameter("coloreLetto"));
-        p.setMaterialeRete(request.getParameter("materialeRete"));
-        p.setRivestimentoDivano(request.getParameter("rivestimentoDivano"));
-        p.setColoreDivano(request.getParameter("coloreDivano"));
-        p.setTipoStoffaCuscino(request.getParameter("tipoStoffaCuscino"));
-        p.setMaterialeCuscino(request.getParameter("materialeCuscino"));
-        p.setFormaCuscino(request.getParameter("formaCuscino"));
         ProdottoDAO.aggiuntaProdotto(p);
         RequestDispatcher dispatcher = request.getRequestDispatcher("HomeServletAmministratore");
         dispatcher.forward(request, response);

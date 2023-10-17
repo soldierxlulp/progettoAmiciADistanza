@@ -1,13 +1,15 @@
 package Controller;
 
-import Model.Prodotto;
-import Model.Utente;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
 
 @WebServlet("/CarrelloServlet")
 public class CarrelloServlet extends HttpServlet {
