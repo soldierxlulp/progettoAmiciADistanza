@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.Prodotto;
+import Model.ProdottoDAO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
