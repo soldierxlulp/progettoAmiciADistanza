@@ -1,0 +1,15 @@
+colori sito:
+#f7dda4 (beige chiaro)
+#b89068 (beige scuro)
+
+
+idProdotto:
+MA - adozione multipla
+SA - adozione singola
+KT - kit
+PE - peluche
+OS - poster
+AL - special
+TS - tshirt
+ZA- tazza
+
