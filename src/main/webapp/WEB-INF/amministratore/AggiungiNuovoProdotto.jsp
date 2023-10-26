@@ -10,29 +10,13 @@
             var idProdottoRGX=/^[A-Z0-9]*$/;
             var nomeProdotto=document.getElementById('nomeProdotto').value;
             var nomeProdottoRGX=/^[a-zA-Z' ']*$/;
-            var lunghezza=document.getElementById('lunghezza').value;
-            var lunghezzaRGX=/^[0-9]*$/;
-            var larghezza=document.getElementById('larghezza').value;
-            var larghezzaRGX=/^[0-9]*$/;
             var prezzo=document.getElementById('prezzo').value;
             var prezzoRGX=/^[0-9'.']*$/;
             var quantita=document.getElementById('quantita').value;
             var quantitaRGX=/^[0-9]*$/;
-            var tipoMaterialeMaterasso=document.getElementById('tipoMaterialeMaterasso').value;
-            var tipoMaterialeMaterassoRGX=/^[a-zA-Z]*$/;
-            var rivestimentoDivano=document.getElementById('rivestimentoDivano').value;
-            var rivestimentoDivanoRGX=/^[a-zA-Z]*$/;
-            var coloreLetto=document.getElementById('coloreLetto').value;
-            var coloreLettoRGX=/^[a-zA-Z]*$/;
-            var tipoStoffaCuscino=document.getElementById('tipoStoffaCuscino').value;
-            var tipoStoffaCuscinoRGX=/^[a-zA-Z]*$/;
-            var formaCuscino=document.getElementById('formaCuscino').value;
-            var formaCuscinoRGX=/^[a-zA-Z]*$/;
-            var materialeRete=document.getElementById('materialeRete').value;
-            var materialeReteRGX=/^[a-zA-Z]*$/;
             var numProdotto=idProdotto.substring(3);
             console.log(numProdotto)
-            if(numProdotto<=54){
+            if(numProdotto<=40){
                 alert("Errore nella definizione del valore dell'ID");
                 return false;
             }
@@ -47,15 +31,6 @@
                 return false;
             }
 
-            if(lunghezzaRGX.test(lunghezza)==false){
-                alert("Errore nella definizione della lunghezza");
-                return false;
-            }
-
-            if(larghezzaRGX.test(larghezza)==false){
-                alert("Errore nella definizione della larghezza");
-                return false;
-            }
 
             if(prezzoRGX.test(prezzo)==false){
                 alert("Errore nella definizione del prezzo");
@@ -67,35 +42,6 @@
                 return false;
             }
 
-            if(tipoMaterialeMaterassoRGX.test(tipoMaterialeMaterasso)==false){
-                alert("Errore nella definizione del materiale del materasso");
-                return false;
-            }
-
-            if(coloreLettoRGX.test(coloreLetto)==false){
-                alert("Errore nella definizione del colore del letto");
-                return false;
-            }
-
-
-            if(rivestimentoDivanoRGX.test(rivestimentoDivano)==false){
-                alert("Errore nella definizione del rivestimento del divano");
-                return false;
-            }
-
-            if(tipoStoffaCuscinoRGX.test(tipoStoffaCuscino)==false){
-                alert("Errore nella definizione della stoffa del cuscino");
-                return false;
-            }
-
-            if(formaCuscinoRGX.test(formaCuscino)==false){
-                alert("Errore nella definizione della forma del cuscino");
-                return false;
-            }
-            if(materialeReteRGX.test(materialeRete)==false){
-                alert("Errore nella definizione del materiale della rete");
-                return false;
-            }
 
             return true;
 
@@ -123,61 +69,32 @@
     <table>
         <tr>
             <th class="inserimento1">
-                <label>Per i prodotti la prima lettera rappresenta la categoria e la seconda il tipo: MM000 Materasso Matrimoniale</label><br>
+                <label>Per i prodotti la prima lettera rappresenta la categoria e la seconda il tipo: MM000 Materasso Matrimoniale</label><br>  fare una didascalia di tutte le categorie
                 <label for="idProdotto">Inserisci l'id del prodotto:</label>
                 <input type="text" name="idProdotto" id="idProdotto" required> <br>
+
                 <label>Scegli la categoria del prodotto:</label>
                 <select name="nomeCategoria">
-                    <option id="MaterassoMatrimoniale"> MaterassoMatrimoniale </option>
-                    <option id="MaterassoSingolo"> MaterassoSingolo </option>
-                    <option id="MaterassoPiazzaEMezzo"> MaterassoPiazzaEMezzo </option>
-                    <option id="LettoContenitoreMatrimoniale"> LettoContenitoreMatrimoniale </option>
-                    <option id="LettoContenitorePiazzaEMezzo"> LettoContenitorePiazzaEMezzo </option>
-                    <option id="LettoContenitoreSingolo"> LettoContenitoreSingolo </option>
-                    <option id="LettoSingolo"> LettoSingolo </option>
-                    <option id="LettoMatrimoniale"> LettoMatrimoniale </option>
-                    <option id="ReteSingolaElettrica"> ReteSingolaElettrica </option>
-                    <option id="ReteMatrimonialeElettrica"> ReteMatrimonialeElettrica </option>
-                    <option id="RetePiazzaEMezzoDoghe"> RetePiazzaEMezzoDoghe </option>
-                    <option id="DivanoLetto"> DivanoLetto </option>
-                    <option id="CuscinoViaggio"> CuscinoViaggio </option>
-                    <option id="CuscinoRelax"> CuscinoRelax </option>
-                    <option id="CuscinoGuanciale"> CuscinoGuanciale </option>
-                    <option id="DivanoPoltrona"> DivanoPoltrona </option>
-                    <option id="DivanoConPenisola"> DivanoConPenisola </option>
+                    <option id="AdozioneSingola"> Adozione Singola </option>
+                    <option id="AdozioneMultipla"> Adozione Multipla </option>
+                    <option id="Peluche"> Peluche </option>
+                    <option id="Tazza"> Tazza</option>
+                    <option id="Poster"> Poster </option>
+                    <option id="Tshirt"> Tshirt </option>
+                    <option id="Kit"> Kit </option>
+                    <option id="Special"> Special </option>
+
                 </select><br>
                 <label for="nomeProdotto">Inserisci il nome del prodotto</label>
                 <input type="text" name="nomeProdotto" id="nomeProdotto" required><br>
                 <label for="descrizione">Inserisci la descrizione del prodotto:</label>
                 <textarea type="text" name="descrizione" id="descrizione" rows="4" cols="80"></textarea><br>
-                <label for="larghezza">Inserisci la larghezza</label>
-                <input type="text" name="larghezza" id="larghezza"><br>
-                <label for="lunghezza">Inserisci la lunghezza</label>
-                <input type="text" name="lunghezza" id="lunghezza"><br>
                 <label for="prezzo">Inserisci il prezzo</label>
                 <input  type="text" name="prezzo" id="prezzo"><br>
                 <label for="quantita">Inserisci la quantità</label>
                 <input type="text" name="quantita" id="quantita"><br>
             </th>
-            <th class="inserimento">
-                <label>Inserire i parametri solo per i prodotti di appartenenza:</label><br>
-                <label for="tipoMaterialeMaterasso">Inserire il tipo di materiale del materasso</label>
-                <input type="text" name="tipoMaterialeMaterasso" id="tipoMaterialeMaterasso"><br>
-                <label for="coloreLetto">Inserire il colore del letto</label>
-                <input type="text" name="coloreLetto" id="coloreLetto"><br>
-                <label for="materialeRete">Inserire il materiale della rete</label>
-                <input type="text" name="materialeRete" id="materialeRete"><br>
-                <label for="rivestimentoDivano">Inserire il materiale del divano</label>
-                <input type="text" name="rivestimentoDivano" id="rivestimentoDivano"><br>
-                <label for="coloreDivano">Inserire colore divano</label>
-                <input type="text" name="coloreDivano" id="coloreDivano"><br>
-                <label for="tipoStoffaCuscino">Inserire la stoffa del cuscino</label>
-                <input type="text" name="tipoStoffaCuscino" id="tipoStoffaCuscino"><br>
-                <label for="materialeCuscino">Inserire il materiale del cuscino</label>
-                <input type="text" name="materialeCuscino" id="materialeCuscino"><br>
-                <label for="formaCuscino">Inserire la forma del cuscino</label>
-                <input type="text" name="formaCuscino" id="formaCuscino"><br>
-            </th>
+
         </tr>
     </table>
     <button onclick="return(validateNewProduct())" type="submit" class="cart"><i class="fa fa-cart-plus"></i></button>

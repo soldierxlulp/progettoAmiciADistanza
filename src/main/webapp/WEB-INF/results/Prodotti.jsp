@@ -26,7 +26,7 @@
     String val = p.getIdProdotto().substring(3);
     int y = Integer.parseInt(val);
     String directory = "immagini/" + p.getIdProdotto() + ".jpg";
-    if(y>54)
+    if(y>40)
     {
         directory = "immagini/fotoNonDisponibile.jpg";
     }
