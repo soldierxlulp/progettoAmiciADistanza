@@ -65,7 +65,7 @@
     </style>
 </head>
 <body>
-<img src="immagini/logo.png" class="sfondo">
+<img src="immagini/logosito.png" class="sfondo">
 <div class="topnav" id="myTopnav">
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Adozione'">Adozione
