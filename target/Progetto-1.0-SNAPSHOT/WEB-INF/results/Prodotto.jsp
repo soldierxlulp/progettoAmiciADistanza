@@ -9,7 +9,7 @@
         String val = p.getIdProdotto().substring(3);
         int y = Integer.parseInt(val);
         String directory = "immagini/" + p.getIdProdotto() + ".jpg";
-        if(y>54)
+        if(y>40)
         {
             directory = "immagini/fotoNonDisponibile.jpg";
         }
@@ -43,40 +43,16 @@
         <div class="info">
             <p><%= p.getDescrizione() %>
             </p>
-            <p>Lunghezza:<%= p.getLunghezza() %> cm Larghezza: <%= p.getLarghezza() %> cm </p>
             <p>Quantità disponibile:<%=p.getQuantita()%>
             </p>
-            <%
-                String x = p.getIdProdotto();
-                if (x.charAt(0) == 'M') {%>
-            <p>Materiale:<%=p.getTipologiaMaterasso()%>
-            </p>
-            <%} else if (x.charAt(0) == 'L') {%>
-            <p>Colore:<%=p.getColoreLetto()%>
-            </p>
-            <%} else if (x.charAt(0) == 'R') {%>
-            <p>Materiale:<%=p.getMaterialeRete()%>
-            </p>
-            <%} else if (x.charAt(0) == 'D' || x.charAt(0) == 'P') {%>
-            <p>Rivestimento:<%=p.getRivestimentoDivano()%>
-            </p>
-            <p>Colore:<%=p.getColoreDivano()%>
-            </p>
-            <%} else {%>
-            <p>Tipo stoffa:<%=p.getTipoStoffaCuscino()%>
-            </p>
-            <p>Forma:<%=p.getFormaCuscino()%>
-            </p>
-            <p>Materiale:<%=p.getMaterialeCuscino()%>
-            </p>
-            <%}%>
+
             <b><p>Le consegne sono previste per un limite dai 7 ai 30 giorni lavorativi</p></b>
         </div>
     </div>
     <table>
         <tr>
             <th>
-                <h1>Modello:<%=p.getNomeProd()%>
+                <h1> <%=p.getNomeProd()%>
                 </h1>
                 <h2><%=p.getPrezzo()%>€</h2>
             </th>
@@ -90,12 +66,12 @@
             <form action="CarrelloServlet">
                 <label>Seleziona quantità:</label>
                 <select name="quantita" id="quantita">
-                <% for(int i=1;i<=p.getQuantita();i++)
-                {
-                    if(p.getQuantita()!=0)
+                    <% for(int i=1;i<=p.getQuantita();i++)
+                    {
+                        if(p.getQuantita()!=0)
                         {%>
                     <option value="<%=i%>"><%=i%></option>
-                        <%}%>
+                    <%}%>
                     <%}%>
                 </select>
                 <button class="cart" type="submit"><i class="fa fa-shopping-cart"></i></button>

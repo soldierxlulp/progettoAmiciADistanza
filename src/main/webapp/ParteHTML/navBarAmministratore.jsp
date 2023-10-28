@@ -57,61 +57,48 @@
 <div class="topnav" id="myTopnav">
     <a href="HomeServletAmministratore" class="active"><i class="fa fa-home"></i></a>
     <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=Letto'">Letto
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=Adozione'">Adozione
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="InizioServlet?valore=LettoSingolo">Letto singolo</a>
-            <a href="InizioServlet?valore=LettoMatrimoniale">Letto matrimoniale</a>
-            <a href="InizioServlet?valore=LettoPiazzaEMezzo">Letto piazza e mezzo</a>
-            <a href="InizioServlet?valore=LettoContenitore">Letto contenitore</a>
+            <a href="InizioServlet?valore=AdozioneSingola">Adozione Singola</a>
+            <a href="InizioServlet?valore=AdozioneMultipla">Adozione Multipla</a>
+
         </div>
     </div>
 
     <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=Materasso'">Materasso
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=Gadget'">Gadget
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="InizioServlet?valore=MaterassoSingolo">Materasso singolo</a>
-            <a href="InizioServlet?valore=MaterassoMatrimoniale">Materasso matrimoniale</a>
-            <a href="InizioServlet?valore=MaterassoPiazzaEMezzo">Materasso piazza e mezzo</a>
+            <a href="InizioServlet?valore=GadgetPeluche">Peluche</a>
+            <a href="InizioServlet?valore=GadgetPoster">Poster</a>
+            <a href="InizioServlet?valore=GadgetTazza">Tazza</a>
+            <a href="InizioServlet?valore=GadgetT-shirt">T-shirt</a>
         </div>
     </div>
 
     <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=Rete'">Rete
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=Kit'">Kit
             <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-            <a href="InizioServlet?valore=ReteSingola">Rete singola</a>
-            <a href="InizioServlet?valore=ReteMatrimoniale">Rete matrimoniale</a>
-            <a href="InizioServlet?valore=RetePiazzaEMezzo">Rete piazza e mezzo</a>
-        </div>
+    </div>
+
+
+    <div class="dropdown">
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=Special'">Special
+            <i class="fa fa-caret-down"></i>
+        </button>
+
     </div>
 
     <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=Divano'">Divano
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=PercheLAdozione'">Perche' l'adozione
             <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-            <a href="InizioServlet?valore=DivanoLetto">Divano Letto</a>
-            <a href="InizioServlet?valore=DivanoContenitore">Divano contenitore</a>
-            <a href="InizioServlet?valore=DivanoConPenisola">Divano con penisola</a>
-            <a href="InizioServlet?valore=DivanoPoltrona">Poltrona</a>
-        </div>
     </div>
 
-    <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=Cuscino'">Cuscino
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="InizioServlet?valore=Cuscinoguanciale">Guanciale</a>
-            <a href="InizioServlet?valore=CuscinoRelax">Relax</a>
-            <a href="InizioServlet?valore=CuscinoViaggio">Viaggio</a>
-        </div>
-    </div>
 
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 

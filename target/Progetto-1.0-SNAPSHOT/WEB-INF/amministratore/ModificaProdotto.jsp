@@ -119,7 +119,7 @@
                 <% HttpSession sessionPrezzo= request.getSession();
                     sessionPrezzo.setAttribute("idModificaPrezzo",prodottoModifica);
                 %>
-                <h1>Modello:<%=prodottoModifica.getNomeProd()%></h1>
+                <h1><%=prodottoModifica.getNomeProd()%></h1>
             </th>
         </tr>
         <th>

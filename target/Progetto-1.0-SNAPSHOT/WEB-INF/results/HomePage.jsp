@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="ParteCSS/CategorieProdotti.css">
     <link rel="stylesheet" href="ParteCSS/styleSito.css">
-    <title>Pharmatex</title>
+    <title>AMICI A DISTANZA</title>
     <%
         List<Prodotto> prod = (ArrayList<Prodotto>) request.getAttribute("prodotti");
         int n = (int) request.getAttribute("Valore");
@@ -68,60 +68,47 @@
 <img src="immagini/logosito.png" class="sfondo">
 <div class="topnav" id="myTopnav">
     <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Letto'">Letto
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Adozione'">Adozione
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="InizioServlet?action=LettoSingolo">Letto singolo</a>
-            <a href="InizioServlet?action=LettoMatrimoniale">Letto matrimoniale</a>
-            <a href="InizioServlet?action=LettoPiazzaEMezzo">Letto piazza e mezzo</a>
-            <a href="InizioServlet?action=LettoContenitore">Letto contenitore</a>
+            <a href="InizioServlet?action=AdozioneSingola">Adozione singola</a>
+            <a href="InizioServlet?action=AdozioneMultipla">Adozione multipla</a>
+
         </div>
     </div>
 
     <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Materasso'">Materasso
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Gadget'">Gadget
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="InizioServlet?action=MaterassoSingolo">Materasso singolo</a>
-            <a href="InizioServlet?action=MaterassoMatrimoniale">Materasso matrimoniale</a>
-            <a href="InizioServlet?action=MaterassoPiazzaEMezzo">Materasso piazza e mezzo</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Rete'">Rete
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="InizioServlet?action=ReteSingola">Rete singola</a>
-            <a href="InizioServlet?action=ReteMatrimoniale">Rete matrimoniale</a>
-            <a href="InizioServlet?action=RetePiazzaEMezzo">Rete piazza e mezzo</a>
+            <a href="InizioServlet?action=GadgetPeluche">Peluche</a>
+            <a href="InizioServlet?action=GadgetPoster">Poster</a>
+            <a href="InizioServlet?action=GadgetTazza">Tazza</a>
+            <a href="InizioServlet?action=GadgetT-shirt">T-shirt</a>
         </div>
     </div>
 
     <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Divano'">Divano
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Kit'">Kit
             <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-            <a href="InizioServlet?action=DivanoLetto">Divano Letto</a>
-            <a href="InizioServlet?action=DivanoContenitore">Divano contenitore</a>
-            <a href="InizioServlet?action=DivanoConPenisola">Divano con penisola</a>
-            <a href="InizioServlet?action=DivanoPoltrona">Poltrona</a>
-        </div>
+
     </div>
 
     <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Cuscino'">Cuscino
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Special'">Special
             <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-            <a href="InizioServlet?action=Cuscinoguanciale">Guanciale</a>
-            <a href="InizioServlet?action=CuscinoRelax">Relax</a>
-            <a href="InizioServlet?action=CuscinoViaggio">Viaggio</a>
-        </div>
     </div>
+
+    <div class="dropdown">
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=PercheLAdozione'">Perche' l'adozione
+            <i class="fa fa-caret-down"></i>
+        </button>
+    </div>
+
 
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     <div class="dropdown">
@@ -132,6 +119,7 @@
     <%
         if(session.getAttribute("Utente")==null)
         {%>
+
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?action=login'">
             <i class="fa fa-user-circle"></i>
@@ -185,7 +173,7 @@
 <%
     for (int i = 0; i < 5; i++,n--) {
         String directory = "immagini/" + prod.get(n).getIdProdotto() + ".jpg";
-        if(Integer.parseInt(prod.get(n).getIdProdotto().substring(3))>54)
+        if(Integer.parseInt(prod.get(n).getIdProdotto().substring(3))>40)
         {
             directory = "immagini/fotoNonDisponibile.jpg";
         }

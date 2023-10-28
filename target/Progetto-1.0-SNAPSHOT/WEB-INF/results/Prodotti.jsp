@@ -26,7 +26,7 @@
     String val = p.getIdProdotto().substring(3);
     int y = Integer.parseInt(val);
     String directory = "immagini/" + p.getIdProdotto() + ".jpg";
-    if(y>54)
+    if(y>40)
     {
         directory = "immagini/fotoNonDisponibile.jpg";
     }
@@ -40,7 +40,7 @@
             </a>
         </div>
         <div class="info">
-            <b style="text-align: center;">Modello:<%=p.getNomeProd()%>
+            <b style="text-align: center;"><%=p.getNomeProd()%>
             </b><br>
             <b style="text-align: center;color: red"><%=p.getPrezzo()%> €</b>
         </div>

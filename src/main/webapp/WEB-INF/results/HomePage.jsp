@@ -83,41 +83,28 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="InizioServlet?action=Peluche">Peluche</a>
-            <a href="InizioServlet?action=Poster">Poster</a>
-            <a href="InizioServlet?action=Tazza">Tazza</a>                         //perchè quando clicclo su uno dei prodotti nella home chiama l'action in inizioservlet ma se l'action è vuoto si va  aprendere il valore da navbar che fa la stessa cosa?
-            <a href="InizioServlet?action=T-shirt">T-shirt</a>
+            <a href="InizioServlet?action=GadgetPeluche">Peluche</a>
+            <a href="InizioServlet?action=GadgetPoster">Poster</a>
+            <a href="InizioServlet?action=GadgetTazza">Tazza</a>
+            <a href="InizioServlet?action=GadgetT-shirt">T-shirt</a>
         </div>
     </div>
+
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Kit'">Kit
             <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-            <a href="InizioServlet?action=Koala">Koala</a>
-            <a href="InizioServlet?action=OrsoPolare">Orso Polare</a>
-            <a href="InizioServlet?action=Panda">Panda</a>
-            <a href="InizioServlet?action=TartarugaMarina">Tartaruga Marina</a>
-            <a href="InizioServlet?action=Tigre">Tigre</a>
-        </div>
+
     </div>
 
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Special'">Special
             <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">                                                                                     // DA VEDERE SPECIAL E CAPIRE COSA METTERE
-            <a href="InizioServlet?action=KoalaGianfranco">Koala Gianfranco</a>
-            <a href="InizioServlet?action=PandaRosalinda">Panda Rosalinda</a>
-            <a href="InizioServlet?action=TartarugaMarinaNapoleone">Tartaruga Marina Napoleone</a>
-            <a href="InizioServlet?action=OrsoPolareTyron">Orso Polare Tyron</a>
-            <a href="InizioServlet?action=TigreBeyoncé">Tigre Beyoncé</a>
-
-        </div>
     </div>
 
     <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=PercheLAdozione'">Perchè l'adozione
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=PercheLAdozione'">Perche' l'adozione
             <i class="fa fa-caret-down"></i>
         </button>
     </div>
