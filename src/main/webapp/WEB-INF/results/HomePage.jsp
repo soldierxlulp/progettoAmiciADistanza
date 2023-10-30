@@ -65,7 +65,8 @@
     </style>
 </head>
 <body>
-<img src="immagini/logosito.png" class="sfondo">
+<a href="/Progetto_war/HomePage"><img src="immagini/logosito.png" class="sfondo"> </a>
+
 <div class="topnav" id="myTopnav">
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Adozione'">Adozione
@@ -171,12 +172,14 @@
     </div>
 </div>
 <%
-    for (int i = 0; i < 5; i++,n--) {
-        String directory = "immagini/" + prod.get(n).getIdProdotto() + ".jpg";
-        if(Integer.parseInt(prod.get(n).getIdProdotto().substring(3))>40)
+    for (int i = 0; i <6; i++,n--) {
+       String directory="immagini/fotoNonDisponibile.jpg";
+       if(Integer.parseInt(prod.get(n).getIdProdotto().substring(3))<41)
+
         {
-            directory = "immagini/fotoNonDisponibile.jpg";
+            directory = "immagini/" + prod.get(n).getIdProdotto() + ".jpg";
         }
+
 %>
 <div class="box-container">
     <div class="box">

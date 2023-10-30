@@ -53,7 +53,7 @@
     </style>
 </head>
 <body>
-<img src="immagini/logosito.png" class="sfondo">
+<a href="/Progetto_war/HomePage"><img src="immagini/logosito.png" class="sfondo"> </a>
 <div class="topnav" id="myTopnav">
     <a href="HomeServletAmministratore" class="active"><i class="fa fa-home"></i></a>
     <div class="dropdown">

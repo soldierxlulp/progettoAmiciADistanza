@@ -64,23 +64,29 @@
         <%} else {%>
         <th>
             <form action="CarrelloServlet">
+
+                <% if (p.getQuantita() == 0) {
+                  %>
+                <%} else { %>   <!-- mettere label di warnig-->
                 <label>Seleziona quantità:</label>
                 <select name="quantita" id="quantita">
-                    <% for(int i=1;i<=p.getQuantita();i++)
-                    {
-                        if(p.getQuantita()!=0)
-                        {%>
-                    <option value="<%=i%>"><%=i%></option>
+                    <% for (int i = 1; i <= p.getQuantita(); i++) {
+                        if (p.getQuantita() != 0) {%>
+                    <option value="<%=i%>"><%=i%>
+                    </option>
                     <%}%>
                     <%}%>
                 </select>
                 <button class="cart" type="submit"><i class="fa fa-shopping-cart"></i></button>
+              <%  }%>
+
+
             </form>
         </th>
         <%}%>
         <tr>
             <td>
-                <button class="cart"><a style="text-decoration: none; color: white; text-underline: none" href="HomePage"><i class="fa fa-home"></i></a></button>
+                <a style="text-decoration: none; color: white; text-underline: none" href="HomePage"> <button class="cart"><i class="fa fa-home"></i></button></a>
             </td>
         </tr>
     </table>

@@ -80,7 +80,7 @@
         <%}%>
         <tr>
             <td>
-                <button class="cart"><a style="text-decoration: none; color: white; text-underline: none" href="HomePage"><i class="fa fa-home"></i></a></button>
+                <a style="text-decoration: none; color: white; text-underline: none" href="HomePage"> <button class="cart"><i class="fa fa-home"></i></button></a>
             </td>
         </tr>
     </table>

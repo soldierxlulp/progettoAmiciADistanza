@@ -20,7 +20,7 @@ public class HomeServlet extends HttpServlet {
         if(request.getParameter("valore")==null)
         {
             int min_val = 5;
-            int max_val = 48;
+            int max_val = 34;
             Random rand = new Random();
             int randomNum = min_val + rand.nextInt((max_val - min_val) + 1);
             request.setAttribute("Valore", randomNum);
