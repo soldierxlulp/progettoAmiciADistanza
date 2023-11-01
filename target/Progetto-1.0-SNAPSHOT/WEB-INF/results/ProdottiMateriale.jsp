@@ -73,7 +73,7 @@
             </a>
         </div>
         <div class="info">
-            <b style="text-align: center;">Modello:<%=p.getNomeProd()%>
+            <b style="text-align: center;"><%=p.getNomeProd()%>
             </b><br>
             <b style="text-align: center;color: red"><%=p.getPrezzo()%> €</b>
         </div>

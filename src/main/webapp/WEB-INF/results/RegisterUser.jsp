@@ -110,7 +110,7 @@
             var nazioneRGX=/^[A-Za-z]*$/;
             if((nazioneRGX.test(nazione ))==false)
             {
-                alert("Nome nazione errato!Peppe Napolitano ricchione!");
+                alert("Nome nazione errato!");
                 return false;
             }
 

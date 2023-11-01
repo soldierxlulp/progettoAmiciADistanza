@@ -1,5 +1,5 @@
 table, td, th {
-    border: 3px solid green;
+    border: 5px solid saddlebrown;
     border-collapse: collapse;
     margin: 5% 50% 2% 40%;
 }
@@ -20,7 +20,7 @@ table tr th button {
 }
 
 .cart {
-    background: #058c42;
+    background: #b89068;
     border-radius: 10px;
     color: white;
     font-size: 15px;

@@ -36,7 +36,7 @@
     %>
     <tr>
         <td>
-            <b style="text-align: center;">Modello:<%=carrello.get(i).getNomeProd()%></b><br>
+            <b style="text-align: center;"><%=carrello.get(i).getNomeProd()%></b><br>
             <div class="image1">
                 <img src="<%=directory%>" style="width: 250px; height: 250px; filter:drop-shadow(0 3px 5px rgba(0,0,0,.7));">
             </div>

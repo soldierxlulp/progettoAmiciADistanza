@@ -64,19 +64,43 @@
         <%} else {%>
         <th>
             <form action="CarrelloServlet">
+
+                <% if (p.getQuantita() == 0) {
+                  %>
+                <%} else { %>
                 <label>Seleziona quantità:</label>
                 <select name="quantita" id="quantita">
-                    <% for(int i=1;i<=p.getQuantita();i++)
-                    {
-                        if(p.getQuantita()!=0)
-                        {%>
-                    <option value="<%=i%>"><%=i%></option>
+                    <% for (int i = 1; i <= p.getQuantita(); i++) {
+                        if (p.getQuantita() != 0) {%>
+                    <option value="<%=i%>"><%=i%>
+                    </option>
                     <%}%>
                     <%}%>
                 </select>
                 <button class="cart" type="submit"><i class="fa fa-shopping-cart"></i></button>
+              <%  }%>
             </form>
         </th>
+        <tr>
+            <th>
+            <form action="CarrelloVeloceServlet">
+                <% if (p.getQuantita() == 0) {
+                %>
+                <%} else { %>
+                <label>Seleziona quantità:</label>
+                <select name="quantita" id="quantita">
+                    <% for (int i = 1; i <= p.getQuantita(); i++) {
+                        if (p.getQuantita() != 0) {%>
+                    <option value="<%=i%>"><%=i%>
+                    </option>
+                    <%}%>
+                    <%}%>
+                </select>
+                <button class="cart" type="submit">Acquisto Veloce</button>
+                <%  }%>
+            </form>
+            </th>
+        </tr>
         <%}%>
         <tr>
             <td>

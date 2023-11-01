@@ -54,13 +54,14 @@
             }
         }
         table {
-            border: 3px solid green;
+            border: 3px solid saddlebrown;
             padding: 5px;
             border-collapse: collapse;
             margin-left: auto;
             margin-right: auto;
             margin-top: 5%;
             width: 50%;
+            background-color: #f7dda4;
         }
     </style>
 </head>
@@ -69,7 +70,8 @@
     <table>
         <tr>
             <th class="inserimento1">
-                <label>Per i prodotti la prima lettera rappresenta la categoria e la seconda il tipo: MM000 Materasso Matrimoniale</label><br>  fare una didascalia di tutte le categorie
+                <label>Id disponibili:</label><br>
+                <label>SA-singola adozione, MA-multipla adozione, PE-peluche, ZA-tazza, OS-poster, TS-tshirt, KT-kit, AL-special </label><br>
                 <label for="idProdotto">Inserisci l'id del prodotto:</label>
                 <input type="text" name="idProdotto" id="idProdotto" required> <br>
 

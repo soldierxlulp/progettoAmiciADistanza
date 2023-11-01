@@ -1,9 +1,10 @@
 table, tr, th {
-    border: 3px solid green;
+    border: 5px solid saddlebrown;
     padding: 4px;
     border-collapse: collapse;
     margin-top: 9%;
     margin-left: 41.5%;
+    background-color: #f7dda4;
 }
 table tr th button {
     cursor: pointer;
@@ -21,7 +22,7 @@ table tr th button {
 }
 
 .cart {
-    background: #058c42;
+    background: #b89068;
     border-radius: 10px;
     color: white;
     font-size: 15px;
@@ -36,6 +37,6 @@ body {
     font-size: 100%;
     color: #333;
     font-family: sans-serif;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0 100%), url('../immagini/Pagamento.jpg');
+    background-image: url('../immagini/patternlogosemplice.jpg');
     background-size: cover;
 }

@@ -1,5 +1,5 @@
 table {
-    border: 3px solid green;
+    border: 3px solid saddlebrown;
     padding: 5px;
     border-collapse: collapse;
     margin-left: auto;
@@ -34,7 +34,7 @@ button {
 }
 
 .cart {
-    background: #058c42;
+    background: #b89068;
     border-radius: 10px;
     color: white;
     font-size: 15px;
@@ -42,4 +42,13 @@ button {
     display: block;
     left: 30%;
     right: 30%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    color: #333;
+    font-family: sans-serif;
+    background-image: url('../immagini/patternlogosemplice.jpg');
+    background-size: cover;
 }

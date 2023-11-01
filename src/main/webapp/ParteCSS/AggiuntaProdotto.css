@@ -1,5 +1,5 @@
 body{
-    background-color: rgba(156,217,194,0.4);
+    background-image: url('../immagini/patternlogosemplice.jpg');
 }
 
 
@@ -23,7 +23,7 @@ button {
 }
 
 .cart {
-    background: #058c42;
+    background: #b89068;
     border-radius: 10px;
     color: white;
     font-size: 15px;
@@ -34,7 +34,7 @@ button {
 }
 
 .inserimento{
-    border: 3px solid green;
+    border: 3px solid saddlebrown;
     width: 50%;
 }
 

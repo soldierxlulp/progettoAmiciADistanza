@@ -189,7 +189,7 @@
             </a>
         </div>
         <div class="info">
-            <b style="text-align: center;">Modello:<%=prod.get(n).getNomeProd()%>
+            <b style="text-align: center;"><%=prod.get(n).getNomeProd()%>
             </b><br>
             <b style="text-align: center;color: red"><%=prod.get(n).getPrezzo()%>&#8364;</b>
         </div>

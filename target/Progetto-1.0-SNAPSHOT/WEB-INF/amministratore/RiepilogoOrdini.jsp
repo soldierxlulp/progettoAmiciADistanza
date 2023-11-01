@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="ParteCSS/CategorieProdotti.css">
     <style>
         table,tr,td{
-            border: 3px solid green;
+            border: 3px solid saddlebrown;
             padding: 5px;
             border-collapse: collapse;
             margin-left: auto;

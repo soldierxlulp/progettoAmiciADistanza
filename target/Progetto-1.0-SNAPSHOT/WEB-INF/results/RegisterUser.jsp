@@ -110,7 +110,7 @@
             var nazioneRGX=/^[A-Za-z]*$/;
             if((nazioneRGX.test(nazione ))==false)
             {
-                alert("Nome nazione errato!Peppe Napolitano ricchione!");
+                alert("Nome nazione errato!");
                 return false;
             }
 
@@ -120,7 +120,7 @@
     </script>
 </head>
 <body>
-<img src="immagini/logosito.png" class="sfondo">
+<a href="/Progetto_war/HomePage"><img src="immagini/logosito.png" class="sfondo"> </a>
 <form method="post" action="RegistrazioneServlet">
     <table>
         <tr>
