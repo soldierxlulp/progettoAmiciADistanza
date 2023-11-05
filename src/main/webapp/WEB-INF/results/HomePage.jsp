@@ -93,23 +93,14 @@
 
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Kit'">Kit
-            <i class="fa fa-caret-down"></i>
         </button>
 
     </div>
 
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Special'">Special
-            <i class="fa fa-caret-down"></i>
         </button>
     </div>
-
-    <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=PercheLAdozione'">Perche' l'adozione
-            <i class="fa fa-caret-down"></i>
-        </button>
-    </div>
-
 
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     <div class="dropdown">
@@ -136,7 +127,7 @@
     </div>
     <div class="dropdown">
         <%Utente u = (Utente) session.getAttribute("Utente");%>
-        <a style="text-underline: none; pointer-events: none">Bentornato, <%=u.getNome()%></a>
+        <a style="text-underline: none; pointer-events: none">Ciao, <%=u.getNome()%></a>
     </div>
     <%}%>
     <%if(session.getAttribute("Utente")!=null)

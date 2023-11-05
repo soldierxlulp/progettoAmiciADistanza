@@ -167,7 +167,7 @@
   </script>
 </head>
 <body>
-<p style="color: black; text-align: center"><%=x%></p>
+<p style="color: red; text-align: center"><%=x%></p>
 <form method="post" action="AcquistoVeloceServlet">
   <table>
     <tr>
