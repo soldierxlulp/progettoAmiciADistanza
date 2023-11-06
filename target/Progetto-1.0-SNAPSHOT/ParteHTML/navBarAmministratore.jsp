@@ -81,22 +81,14 @@
 
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=Kit'">Kit
-            <i class="fa fa-caret-down"></i>
         </button>
     </div>
 
 
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=Special'">Special
-            <i class="fa fa-caret-down"></i>
         </button>
 
-    </div>
-
-    <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=PercheLAdozione'">Perche' l'adozione
-            <i class="fa fa-caret-down"></i>
-        </button>
     </div>
 
 
