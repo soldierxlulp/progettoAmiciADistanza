@@ -18,20 +18,6 @@
         <input type="text" id="prezzomax" name="prezzomax">
         <button id="filtra" onclick="return(validate())" value="filtra">Filtra</button>
     </form>
-
-
-        <label style="float: left">Prodotto:</label>
-        <select style="float: left" name="Materiale" id="prodottoSelezione" onChange="getProdotto(this.value)">
-            <option>Selezionare....</option>
-            <option value="Materasso">Materasso</option>
-            <option value="Rete">Rete</option>
-            <option value="Cuscino">Cuscino</option>
-        </select>
-    <label style="float: left">Materiale:</label>
-    <select style="float: left" name="MatSelezione" id="MatSelezione" onChange="getMateriale(this.value)"> </select>
-    <form action="MaterialeServlet">
-        <button style="margin-left: 4px" type="submit" >Premi</button>
-    </form>
 </div>
 
 <div style="padding: 3px">
@@ -80,31 +66,6 @@ function validate() {
     }
 
     return true;
-}
-
-function getProdotto(prod) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("MatSelezione").innerHTML =
-                this.responseText;
-        }
-    };
-    xhttp.open("GET", "FiltraggioServletMateriale?prodotto="+prod, true);
-    xhttp.send();
-}
-
-function getMateriale(mat) {
-    var prod = document.getElementById("prodottoSelezione").value;
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("MatSelezione").innerHTML =
-                this.responseText;
-        }
-    };
-    xhttp.open("GET", "FiltraggioServletMateriale?materiale="+mat + "&" + "prodotto=" +prod, true);
-    xhttp.send();
 }
 </script>
 </body>

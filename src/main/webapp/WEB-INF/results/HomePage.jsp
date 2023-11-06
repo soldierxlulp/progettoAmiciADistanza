@@ -65,6 +65,7 @@
     </style>
 </head>
 <body>
+<header>
 <a href="/Progetto_war/HomePage"><img src="immagini/logosito.png" class="sfondo"> </a>
 
 <div class="topnav" id="myTopnav">
@@ -162,6 +163,7 @@
         </form>
     </div>
 </div>
+</header>
 <%
     for (int i = 0; i <6; i++,n--) {
        String directory="immagini/fotoNonDisponibile.jpg";
