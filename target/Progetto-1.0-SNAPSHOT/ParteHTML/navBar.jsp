@@ -61,8 +61,8 @@
     </script>
 </head>
 <body>
-<a href="/Progetto_war/HomePage"><img src="immagini/logosito.png" class="sfondo"> </a>
-<div class="topnav" id="myTopnav">
+    <a href="/Progetto_war/HomePage"><img src="immagini/logosito.png" class="sfondo"> </a>
+    <div class="topnav" id="myTopnav">
     <div class="dropdown">
         <a href="HomePage"><i class="fa fa-home"></i></a>
     </div>

@@ -65,7 +65,6 @@
     </style>
 </head>
 <body>
-<header>
 <a href="/Progetto_war/HomePage"><img src="immagini/logosito.png" class="sfondo"> </a>
 
 <div class="topnav" id="myTopnav">
@@ -163,31 +162,32 @@
         </form>
     </div>
 </div>
-</header>
-<%
-    for (int i = 0; i <6; i++,n--) {
-       String directory="immagini/fotoNonDisponibile.jpg";
-       if(Integer.parseInt(prod.get(n).getIdProdotto().substring(3))<41)
 
-        {
-            directory = "immagini/" + prod.get(n).getIdProdotto() + ".jpg";
-        }
+    <%
+        for (int i = 0; i <6; i++,n--) {
+           String directory="immagini/fotoNonDisponibile.jpg";
+           if(Integer.parseInt(prod.get(n).getIdProdotto().substring(3))<41)
 
-%>
-<div class="box-container">
-    <div class="box">
-        <div class="image">
-            <a href="RicercaServlet?search=<%=prod.get(n).getNomeProd()%>">
-                <img src="<%=directory%>">
-            </a>
-        </div>
-        <div class="info">
-            <b style="text-align: center;"><%=prod.get(n).getNomeProd()%>
-            </b><br>
-            <b style="text-align: center;color: red"><%=prod.get(n).getPrezzo()%>&#8364;</b>
+            {
+                directory = "immagini/" + prod.get(n).getIdProdotto() + ".jpg";
+            }
+
+    %>
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <a href="RicercaServlet?search=<%=prod.get(n).getNomeProd()%>">
+                    <img src="<%=directory%>">
+                </a>
+            </div>
+            <div class="info">
+                <b style="text-align: center;"><%=prod.get(n).getNomeProd()%>
+                </b><br>
+                <b style="text-align: center;color: red"><%=prod.get(n).getPrezzo()%>&#8364;</b>
+            </div>
         </div>
     </div>
-</div>
-<% } %>
+    <% } %>
+
 </body>
 </html>
