@@ -2,6 +2,7 @@ table, td, th {
     border: 5px solid saddlebrown;
     border-collapse: collapse;
     background-color: #f7dda4;
+    width: 100%;
 }
 
 button{
@@ -16,7 +17,7 @@ button{
     left: auto;
     right: auto;
     top: 20%;
-    width: 50%;
+    width: 30%;
 }
 
 .cart {
@@ -28,4 +29,8 @@ button{
     display: block;
     left: 30%;
     right: 30%;
+}
+
+.info{
+    max-width: 100%;
 }

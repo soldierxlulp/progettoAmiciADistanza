@@ -130,13 +130,14 @@
         <a style="text-underline: none; pointer-events: none">Ciao, <%=u.getNome()%></a>
     </div>
     <%}%>
-    <%if(session.getAttribute("Utente")!=null)
-    {%>
+
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='LoginServlet?action=carrello'">
             <i class="fa fa-shopping-cart"></i>
         </button>
     </div>
+    <%if(session.getAttribute("Utente")!=null)
+    {%>
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='LoginServlet?action=riepilogo'">
             <i class="fa fa-truck"></i>
@@ -190,4 +191,5 @@
     <% } %>
 
 </body>
+<%@ include file="/ParteHTML/footer.jsp" %>
 </html>

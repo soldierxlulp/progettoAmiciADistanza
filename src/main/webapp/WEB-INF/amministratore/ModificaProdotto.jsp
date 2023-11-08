@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="Model.Prodotto" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/ParteHTML/navBarAmministratore.jsp" %>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="ParteCSS/paginaProdotto.css">
@@ -18,6 +18,27 @@
     %>
     <title><%=prodottoModifica.getNomeProd()%>
     </title>
+    <style>
+        .box-container .box .image img{
+
+            width: 500px;height: 500px;
+            border-style: solid;
+            border-width: 2px;
+            filter:drop-shadow(0 3px 5px rgba(0,0,0,.7));
+        }
+
+
+        .dropdown button{
+            width: 100%;
+        }
+        .box-container{
+            max-width: 500px;
+            margin-top: 5%;
+            margin-right: auto;
+            margin-left: auto;
+            float: none;
+        }
+    </style>
 
     <script>
 
@@ -108,12 +129,14 @@
 <body>
 <div class="box-container">
     <div class="box">
+        <h1><%=prodottoModifica.getNomeProd()%></h1>
         <div class="image">
+
             <img style="border-style: solid;border-width: 2px;" src="<%=directory%>">
         </div>
         <p><b>Quantità disponibile:<%=prodottoModifica.getQuantita()%></b></p>
         <p><b>Prezzo Attuale: <%=prodottoModifica.getPrezzo()%>€</b></p>
-    <table style="position: fixed; left: 7%; top: 70%; width: auto;" id="tabella">
+    <table  id="tabella">
         <tr>
             <th>
                 <% HttpSession sessionPrezzo= request.getSession();
@@ -126,7 +149,7 @@
             <form action="ModificaProdottiServletAmministratore">
                 <label>Inserisci nuovo prezzo:</label>
                 <input type="text" id="nuovoPrezzo" name="nuovoPrezzo">
-                <label>Inserisci la quantità:</label>
+              <br>  <label>Inserisci la quantità:</label>
                 <input type="text" id="quantitaTotale" name="quantitaTotale">
                 <button type="submit" onclick="return(validatePQ())" class="cart">Premi</button>
             </form>

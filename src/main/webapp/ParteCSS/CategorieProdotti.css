@@ -1,12 +1,20 @@
 .box .image img{
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     filter:drop-shadow(0 3px 5px rgba(0,0,0,.7));
 }
+.info{
+    max-width: 300px;
+    margin-top: 15px;
+}
+
+ .box{
+     min-height: 480px;
+ }
 
 .box-container{
     border: none;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 7%;
     float: left;
     border: 0px;

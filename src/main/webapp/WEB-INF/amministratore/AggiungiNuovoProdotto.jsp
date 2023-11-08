@@ -66,7 +66,8 @@
     </style>
 </head>
 <body>
-<form method="post" action="AggiuntaProdottoServlet">
+<form method="post" enctype="multipart/form-data" action="AggiuntaProdottoServlet">
+
     <table>
         <tr>
             <th class="inserimento1">
@@ -95,6 +96,10 @@
                 <input  type="text" name="prezzo" id="prezzo"><br>
                 <label for="quantita">Inserisci la quantità</label>
                 <input type="text" name="quantita" id="quantita"><br>
+                <label for="immagineProdotto">Carica un'immagine del prodotto</label>
+                <input type="file" name="immagineProdotto" id="immagineProdotto"><br>
+
+
             </th>
 
         </tr>
