@@ -1,9 +1,10 @@
 <%@ page import="Model.Prodotto" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/ParteHTML/navBar.jsp" %>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="ParteCSS/paginaProdotto.css">
-    <link rel="stylesheet" type="text/css" href="ParteCSS/styleSito.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <% Prodotto p = (Prodotto) request.getAttribute("prodotto");
         String val = p.getIdProdotto().substring(3);
@@ -17,26 +18,33 @@
     <title><%=p.getNomeProd()%></title>
     <style>
         .box-container .box .image img{
+
             width: 500px;height: 500px;
             border-style: solid;
             border-width: 2px;
             filter:drop-shadow(0 3px 5px rgba(0,0,0,.7));
         }
 
+
+        .dropdown button{
+            width: 100%;
+        }
         .box-container{
-            border: none;
-            margin-top: 3%;
-            margin-left: 40%;
-            margin-right: 50%;
-            float: left;
-            border: 0px;
+            max-width: 500px;
+            margin-top: 5%;
+            margin-right: auto;
+            margin-left: auto;
+            float: none;
         }
     </style>
+
 </head>
 <body>
 
 <div class="box-container" >
     <div class="box">
+        <h1> <%=p.getNomeProd()%>
+        </h1>
         <div class="image">
             <img src="<%=directory%>">
         </div>

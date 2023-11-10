@@ -26,7 +26,7 @@ public class CarrelloServlet extends HttpServlet {
         Utente u = (Utente) session.getAttribute("Utente");
         ArrayList<Prodotto> cartList = new ArrayList<Prodotto>();
         ArrayList<Integer> qList = new ArrayList<Integer>();
-        if(true)
+        if(u!=null)
         {
             ArrayList<Prodotto> cart_list = (ArrayList<Prodotto>) session.getAttribute("cart-list");
             ArrayList<Integer> q_List = (ArrayList<Integer>)session.getAttribute("quantitaArticoli");
