@@ -1,11 +1,13 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="Model.Prodotto" %>
+<%@ page import="Model.Utente" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/ParteHTML/navBar.jsp" %>
 <html>
 <head>
     <title>Carrello</title>
     <%
+        Utente u = (Utente) session.getAttribute("Utente");
         Double prezzo=0.0;
         ArrayList<Prodotto> carrello = (ArrayList<Prodotto>) session.getAttribute("cart-list");
         ArrayList<Integer> qList = (ArrayList<Integer>) session.getAttribute("quantitaArticoli");
@@ -61,7 +63,7 @@
             <b><p>Le consegne sono previste per un limite dai 7 ai 30 giorni lavorativi</p></b>
         </th>
     </tr>
-    <%if(!f)
+    <%if(!f && u!=null)
     {%>
     <tr>
         <th>
@@ -71,6 +73,16 @@
             </form>
         </th>
     </tr>
+    <%} else
+    {%>
+        <tr>
+            <th>
+                <form method="post" action="AcquistoVeloceServlet">
+                    <button class="cart" type="submit">Acquisto Veloce
+                        <i class="fa fa-credit-card"></i></button>
+                </form>
+            </th>
+        </tr>
     <%}%>
     <%}%>
 </table>
