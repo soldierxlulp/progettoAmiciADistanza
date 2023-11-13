@@ -1,4 +1,5 @@
 <%@ page import="Model.Prodotto" %>
+<%@ page import="Model.Utente" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/ParteHTML/navBar.jsp" %>
 <html>
@@ -6,7 +7,9 @@
     <link rel="stylesheet" type="text/css" href="ParteCSS/paginaProdotto.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <% Prodotto p = (Prodotto) request.getAttribute("prodotto");
+    <%
+        Utente u = (Utente) session.getAttribute("Utente");
+        Prodotto p = (Prodotto) request.getAttribute("prodotto");
         String val = p.getIdProdotto().substring(3);
         int y = Integer.parseInt(val);
         String directory = "immagini/" + p.getIdProdotto() + ".jpg";
@@ -69,46 +72,68 @@
         <th>
             <p style="color: red">Prodotto non disponibile</p>
         </th>
-        <%} else {%>
-        <th>
-            <form action="CarrelloServlet">
+        <%} else {
+            if(u==null){ %>
+                <th>
+                    <form action="CarrelloServlet">
 
-                <% if (p.getQuantita() == 0) {
-                  %>
-                <%} else { %>
-                <label>Seleziona quantità:</label>
-                <select name="quantita" id="quantita">
-                    <% for (int i = 1; i <= p.getQuantita(); i++) {
-                        if (p.getQuantita() != 0) {%>
-                    <option value="<%=i%>"><%=i%>
-                    </option>
-                    <%}%>
-                    <%}%>
-                </select>
-                <button class="cart" type="submit"><i class="fa fa-shopping-cart"></i></button>
-              <%  }%>
-            </form>
-        </th>
-        <tr>
-            <th>
-            <form action="CarrelloVeloceServlet">
-                <% if (p.getQuantita() == 0) {
-                %>
-                <%} else { %>
-                <label>Seleziona quantità:</label>
-                <select name="quantita" id="quantita">
-                    <% for (int i = 1; i <= p.getQuantita(); i++) {
-                        if (p.getQuantita() != 0) {%>
-                    <option value="<%=i%>"><%=i%>
-                    </option>
-                    <%}%>
-                    <%}%>
-                </select>
-                <button class="cart" type="submit">Acquisto Veloce</button>
-                <%  }%>
-            </form>
-            </th>
-        </tr>
+                        <% if (p.getQuantita() == 0) {
+                          %>
+                        <%} else { %>
+                        <label>Seleziona quantità:</label>
+                        <select name="quantita" id="quantita">
+                            <% for (int i = 1; i <= p.getQuantita(); i++) {
+                                if (p.getQuantita() != 0) {%>
+                            <option value="<%=i%>"><%=i%>
+                            </option>
+                            <%}%>
+                            <%}%>
+                        </select>
+                        <button class="cart" type="submit"><i class="fa fa-shopping-cart"></i></button>
+                      <%  }%>
+                    </form>
+                </th>
+                <tr>
+                    <th>
+                    <form action="CarrelloVeloceServlet">
+                        <% if (p.getQuantita() == 0) {
+                        %>
+                        <%} else { %>
+                        <label>Seleziona quantità:</label>
+                        <select name="quantita" id="quantita">
+                            <% for (int i = 1; i <= p.getQuantita(); i++) {
+                                if (p.getQuantita() != 0) {%>
+                            <option value="<%=i%>"><%=i%>
+                            </option>
+                            <%}%>
+                            <%}%>
+                        </select>
+                        <button class="cart" type="submit">Acquisto Veloce</button>
+                        <%  }%>
+                    </form>
+                    </th>
+                </tr>
+            <%} else {%>
+                <th>
+                    <form action="CarrelloServlet">
+
+                        <% if (p.getQuantita() == 0) {
+                        %>
+                        <%} else { %>
+                        <label>Seleziona quantità:</label>
+                        <select name="quantita" id="quantita">
+                            <% for (int i = 1; i <= p.getQuantita(); i++) {
+                                if (p.getQuantita() != 0) {%>
+                            <option value="<%=i%>"><%=i%>
+                            </option>
+                            <%}%>
+                            <%}%>
+                        </select>
+                        <button class="cart" type="submit"><i class="fa fa-shopping-cart"></i></button>
+                        <%  }%>
+                    </form>
+                </th>
+             <%}%>
         <%}%>
         <tr>
             <td>
