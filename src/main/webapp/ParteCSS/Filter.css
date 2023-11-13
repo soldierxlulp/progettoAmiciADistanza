@@ -32,6 +32,11 @@
     border: none;
 }
 
+.openbtn:hover {
+    background-color: #f4a460;
+    color: white;
+}
+
 @media screen and (max-height: 450px) {
     .sidebar {
         padding-top: 15px;
