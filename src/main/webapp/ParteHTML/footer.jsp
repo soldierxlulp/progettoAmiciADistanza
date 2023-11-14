@@ -20,11 +20,9 @@
             margin: 10px;
         }
 
-
         .footer-social a {
             margin: 0 10px;
-        }
-    </style>
+        } </style>
 </head>
 <body>
 
