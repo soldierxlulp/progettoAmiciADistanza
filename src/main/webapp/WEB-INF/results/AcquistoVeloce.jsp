@@ -168,7 +168,7 @@
 </head>
 <body>
 <p style="color: red; text-align: center"><%=x%></p>
-<form method="post" action="AcquistoVeloceServlet">
+<form method="post" action="DatiAcquistoVeloceServlet">
   <table>
     <tr>
       <th>

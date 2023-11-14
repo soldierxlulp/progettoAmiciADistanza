@@ -163,7 +163,6 @@
         </form>
     </div>
 </div>
-
     <%
         for (int i = 0; i <6; i++,n--) {
            String directory="immagini/fotoNonDisponibile.jpg";
@@ -189,7 +188,6 @@
         </div>
     </div>
     <% } %>
-
 </body>
 <%@ include file="/ParteHTML/footer.jsp" %>
 </html>

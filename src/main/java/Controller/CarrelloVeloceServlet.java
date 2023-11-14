@@ -37,7 +37,7 @@ public class CarrelloVeloceServlet extends HttpServlet {
             qList.add(Integer.valueOf(request.getParameter("quantita")));
             session.setAttribute("cart-list", cartList);
             session.setAttribute("quantitaArticoli",qList);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/AcquistoVeloce.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("HomePage");
             dispatcher.forward(request, response);
         }
         else
@@ -59,7 +59,7 @@ public class CarrelloVeloceServlet extends HttpServlet {
             {
                 cartList.add(p);
                 qList.add(Integer.valueOf(request.getParameter("quantita")));
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/AcquistoVeloce.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("HomePage");
                 dispatcher.forward(request, response);
             }
             else
@@ -67,6 +67,28 @@ public class CarrelloVeloceServlet extends HttpServlet {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("HomePage");
                 dispatcher.forward(request, response);
             }
+        }
+        if ((request.getParameter("action").contains("rimuovi")))
+        {
+            String x[] = request.getParameter("action").split("rimuovi");
+            String val = x[1];
+            for (int i = 0; i < cartList.size(); i++)
+            {
+                if (cartList.get(i).getIdProdotto().equalsIgnoreCase(val))
+                {
+                    cartList.remove(i);
+                    qList.remove(i);
+                    session.setAttribute("cart-list", cartList);
+                    session.setAttribute("quantitaArticoli",qList);
+                }
+            }
+            RequestDispatcher dispatcher1 = request.getRequestDispatcher("HomePage");
+            dispatcher1.forward(request, response);
+        }
+        else
+        {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/Login.jsp");
+            dispatcher.forward(request, response);
         }
     }
 }

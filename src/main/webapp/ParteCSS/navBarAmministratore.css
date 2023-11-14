@@ -29,7 +29,7 @@ body {
 }
 
 .active {
-    
+    background-color: #b89068;
     color: white;
 }
 
@@ -72,13 +72,13 @@ body {
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
-    background-color: #b89068;
+    background-color: #f4a460;
     color: white;
 }
 
 .dropdown-content a:hover {
-    background-color:  #b89068;
-    color: #ddd;
+    background-color:  #ddd;
+    color: #b89068;
 }
 
 .dropdown:hover .dropdown-content {
