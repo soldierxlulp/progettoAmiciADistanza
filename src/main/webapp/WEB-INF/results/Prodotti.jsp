@@ -22,6 +22,7 @@
     </title>
 </head>
 <body>
+<div class="content">
 <% for (Prodotto p : prod) {
     String val = p.getIdProdotto().substring(3);
     int y = Integer.parseInt(val);
@@ -47,5 +48,7 @@
     </div>
 </div>
 <%}%>
+</div>
+<%@ include file="/ParteHTML/footer.jsp" %>
 </body>
 </html>

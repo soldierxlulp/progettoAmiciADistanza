@@ -127,16 +127,19 @@
     </style>
 </head>
 <body>
-<div class="box-container">
-    <div class="box">
+<div class="box-container-prodotto">
+    <div class="box-prodotto">
         <h1><%=prodottoModifica.getNomeProd()%></h1>
         <div class="image">
 
-            <img style="border-style: solid;border-width: 2px;" src="<%=directory%>">
+            <center><img style="border-style: solid;border-width: 2px;" src="<%=directory%>"></center>
         </div>
-        <p><b>Quantità disponibile:<%=prodottoModifica.getQuantita()%></b></p>
-        <p><b>Prezzo Attuale: <%=prodottoModifica.getPrezzo()%>€</b></p>
-    <table  id="tabella">
+        <center>
+            <p><b>Quantità disponibile:<%=prodottoModifica.getQuantita()%></b></p>
+            <p><b>Prezzo Attuale: <%=prodottoModifica.getPrezzo()%>€</b></p>
+        </center>
+
+    <table  id="tabella"  class="table-prodotto">
         <tr>
             <th>
                 <% HttpSession sessionPrezzo= request.getSession();
@@ -169,4 +172,5 @@
     </div>
 </div>
 </body>
+<%@ include file="/ParteHTML/footer.jsp" %>
 </html>

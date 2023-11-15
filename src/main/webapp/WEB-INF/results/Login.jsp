@@ -11,7 +11,7 @@
         x="Email o password errati!";
     }%>
 </head>
-<a href="/Progetto_war/HomePage"><img src="immagini/logosito.png" class="sfondo"> </a>
+<a href="/Progetto_war/HomePage"><img src="immagini/logosito.png" class="sfondo logo"> </a>
 <body>
 
 <table>

@@ -65,7 +65,7 @@
     </style>
 </head>
 <body>
-<a href="/Progetto_war/HomePage"><img src="immagini/logosito.png" class="sfondo"> </a>
+<a href="/Progetto_war/HomePage"><img src="immagini/logosito.png" class="sfondo logo"> </a>
 
 <div class="topnav" id="myTopnav">
     <div class="dropdown">
@@ -163,6 +163,7 @@
         </form>
     </div>
 </div>
+<div class="content">
     <%
         for (int i = 0; i <6; i++,n--) {
            String directory="immagini/fotoNonDisponibile.jpg";
@@ -188,6 +189,9 @@
         </div>
     </div>
     <% } %>
+
+</div>
+
 </body>
 <%@ include file="/ParteHTML/footer.jsp" %>
 </html>

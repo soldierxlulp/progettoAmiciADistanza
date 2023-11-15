@@ -24,6 +24,7 @@
     </style>
 </head>
 <body>
+<div class="content">
 <% if(riepilogoProdotti.size()<=0)
 { %>
     <h1>Nessuna spedizione in programma</h1>
@@ -55,5 +56,7 @@
         </div>
     </div>
     <%}%>
+</div>
 </body>
+<%@ include file="/ParteHTML/footer.jsp" %>
 </html>

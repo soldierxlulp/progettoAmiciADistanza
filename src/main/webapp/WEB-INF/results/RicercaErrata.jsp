@@ -8,4 +8,5 @@
 <h1 style="text-align: center; margin-top: 20%"><b>Ops Qualcosa E' Andato Storto. Prova A Ricercare Meglio!&#128542;</b>
 </h1>
 </body>
+<%@ include file="/ParteHTML/footer.jsp" %>
 </html>

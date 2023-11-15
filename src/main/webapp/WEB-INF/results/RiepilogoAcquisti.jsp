@@ -55,4 +55,5 @@ else { %>
 <h1>Effettua degli ordini per visualizzarli</h1>
 <% } %>
 </body>
+<%@ include file="/ParteHTML/footer.jsp" %>
 </html>

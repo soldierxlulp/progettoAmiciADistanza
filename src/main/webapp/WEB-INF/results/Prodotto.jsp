@@ -44,12 +44,12 @@
 </head>
 <body>
 
-<div class="box-container" >
-    <div class="box">
+<div class="box-container-prodotto" >
+    <div class="box-prodotto">
         <h1> <%=p.getNomeProd()%>
         </h1>
         <div class="image">
-            <img src="<%=directory%>">
+            <center><img src="<%=directory%>" style="width: 300px;height: 300px;"></center>
         </div>
         <div class="info">
             <p><%= p.getDescrizione() %>
@@ -60,7 +60,7 @@
             <b><p>Le consegne sono previste per un limite dai 7 ai 30 giorni lavorativi</p></b>
         </div>
     </div>
-    <table>
+    <table class="table-prodotto">
         <tr>
             <th>
                 <h1> <%=p.getNomeProd()%>
@@ -143,4 +143,5 @@
     </table>
 </div>
 </body>
+<%@ include file="/ParteHTML/footer.jsp" %>
 </html>

@@ -4,6 +4,7 @@
     <title>Contatti</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="ParteCSS/Contatti.css">
+    <link rel="stylesheet" type="text/css" href="ParteCSS/styleSito.css">
     <script>
         $(document).ready(function(){
             $("#1").mouseenter(function () {
@@ -65,8 +66,9 @@
 
     </script>
 </head>
+<a href="/Progetto_war/HomePage"><img src="immagini/logosito.png" class="sfondo logo"> </a>
 <body>
-<img src="immagini/patternsemplicepiccolo.png" class="contatti">
+
 <table>
     <tr>
         <th style="font-size: 2vw">Indirizzo:</th>
@@ -89,4 +91,5 @@
     <br>Insieme, possiamo fare la differenza. Diventa un Amico a Distanza oggi!
 </p>
 </body>
+<%@ include file="/ParteHTML/footer.jsp" %>
 </html>

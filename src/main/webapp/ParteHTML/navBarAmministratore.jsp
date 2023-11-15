@@ -17,6 +17,14 @@
         }
     </script>
     <style>
+        .content{
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1280px;
+        }
+        html{
+            overflow-x: hidden;
+        }
         @media screen and (max-width: 1100px) {
             .topnav a:not(:first-child), .dropdown .dropbtn {
                 display: none;
@@ -53,7 +61,7 @@
     </style>
 </head>
 <body>
-<a href="/Progetto_war/HomeServletAmministratore"><img src="immagini/logosito.png" class="sfondo"> </a>
+<a href="/Progetto_war/HomeServletAmministratore"><img src="immagini/logosito.png" class="sfondo logo"> </a>
 <div class="topnav" id="myTopnav">
     <a href="HomeServletAmministratore" class="active"><i class="fa fa-home"></i></a>
     <div class="dropdown">

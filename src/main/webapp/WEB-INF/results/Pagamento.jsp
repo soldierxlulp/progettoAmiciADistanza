@@ -84,4 +84,5 @@
 </table>
 </form>
 </body>
+<%@ include file="/ParteHTML/footer.jsp" %>
 </html>

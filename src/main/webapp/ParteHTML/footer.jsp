@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Il Tuo Sito</title>
-    <style>
+ <style>
 
         footer {
             background-color: #b89068; /* Sfondo marrone */
@@ -13,6 +6,7 @@
             text-align: center;
             padding: 5px; /* Ridotto da 10px a 5px */
             width: 100%;
+            margin-top: 150px;
         }
 
 
@@ -22,12 +16,9 @@
 
         .footer-social a {
             margin: 0 10px;
-        } </style>
-</head>
-<body>
+        }
+ </style>
 
-
-<div style="height: 1500px;"></div>
 
 <!-- Footer -->
 <footer>
@@ -45,6 +36,3 @@
         <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true" style="color:white"></i></a>
     </div>
 </footer>
-</body>
-</html>
-

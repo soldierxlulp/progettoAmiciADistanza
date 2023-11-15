@@ -33,4 +33,5 @@ Utente utente = (Utente) session.getAttribute("Amministratore");%>
             <%}%>
         </table>
 </body>
+<%@ include file="/ParteHTML/footer.jsp" %>
 </html>

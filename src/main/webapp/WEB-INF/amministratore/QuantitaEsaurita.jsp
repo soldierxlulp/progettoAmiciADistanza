@@ -11,6 +11,7 @@
    <link rel="stylesheet" type="text/css" href="ParteCSS/CategorieProdotti.css">
 </head>
 <body>
+<div class="content">
 <% if(prodEsauriti.size()==0){%>
     <h1>Nessun prodotto esaurito</h1>
 <%}
@@ -38,5 +39,7 @@
     </div>
 </div>
 <%}%>
+</div>
 </body>
+<%@ include file="/ParteHTML/footer.jsp" %>
 </html>

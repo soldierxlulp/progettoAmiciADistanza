@@ -108,4 +108,5 @@
     <button onclick="window.location.href='HomeServletAmministratore'" type="submit" class="cart"><i class="fa fa-home"></i></button>
 </form>
 </body>
+<%@ include file="/ParteHTML/footer.jsp" %>
 </html>

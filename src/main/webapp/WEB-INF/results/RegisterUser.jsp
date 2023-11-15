@@ -162,6 +162,7 @@
 <br>
 
 </body>
+<%@ include file="/ParteHTML/footer.jsp" %>
 </html>
 
 
