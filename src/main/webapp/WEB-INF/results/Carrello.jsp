@@ -45,7 +45,11 @@
                     <div class="info">
                         <b style="text-align: center;color: red;"><%=carrello.get(i).getPrezzo()%> €</b> <br>
                         <b style="text-align: center;">Quantità articoli:<%=qList.get(i)%></b>
-                        <button class="cart"><a style="text-decoration: none; color: white; text-underline: none" href="CarrelloServlet?action=rimuovi<%=carrello.get(i).getIdProdotto()%>"><i class="fa fa-trash-o"></i></a></button>
+                        <% if (u!=null) {%>
+                            <button class="cart"><a style="text-decoration: none; color: white; text-underline: none" href="CarrelloServlet?action=rimuovi<%=carrello.get(i).getIdProdotto()%>"><i class="fa fa-trash-o"></i></a></button>
+                        <% } else {%>
+                        <button class="cart"><a style="text-decoration: none; color: white; text-underline: none" href="CarrelloVeloceServlet?action=rimuovi<%=carrello.get(i).getIdProdotto()%>"><i class="fa fa-trash-o"></i></a></button>
+                        <%}%>
                         <% if(qList.get(i)>carrello.get(i).getQuantita())
                         { f=true;%>
                         <p style="color: red">Errore quantità non sufficiente in magazzino</p>
