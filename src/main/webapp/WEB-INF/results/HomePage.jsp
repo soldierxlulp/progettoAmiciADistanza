@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="ParteCSS/CategorieProdotti.css">
+    <link rel="stylesheet" href="ParteCSS/TemplateProdotti.css">
     <link rel="stylesheet" href="ParteCSS/styleSito.css">
     <title>AMICI A DISTANZA</title>
     <%
@@ -29,7 +30,7 @@
             event.preventDefault();
             var searchValue = document.querySelector('input[name="search"]').value;
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'FindProduct?search=' + searchValue, true);
+            xhr.open('GET', 'FindProductServlet?search=' + searchValue, true);
             xhr.onload = function() {
                 if(xhr.status == 200) {
                     var risultati = JSON.parse(xhr.responseText);
@@ -47,6 +48,30 @@
             };
             xhr.send();
         });
+
+
+        /*
+       ------ come visualizzare i prodotti -----
+       function prodottiTemplate(prod){
+            return `
+                    <div class="prodotti">
+                            <a href="RicercaServlet?search=${prod.idProdotto}">
+                                <img class="prod-photo" src="/immagini/${prod.idProdotto}.jpg">
+                            </a>
+                            <h2 class="prod-name">${prod.nomeProd} <span class="categoria">(${prod.nomeCategoria})</span></h2>
+                            <p><strong>Prezzo:</strong>${prod.prezzo}</p>
+                            <h4>Descrizione</h4>
+                            <p>${prod.descrizione}
+                    </div>
+                    `;
+        }
+
+document.getElementById('risultatiRicerca').innerHTML = `
+                        <h1 class="title">Prodotti (${risultati.length} risultati)</h1>
+                        ${risultati.map(prodottiTemplate).join("")}
+                    `;
+
+         */
     </script>
     <style>
         @media screen and (max-width: 1482px) {
