@@ -140,25 +140,6 @@
         </button>
     </div>
         <%}%>
-
-    <div class="search-container">
-        <form action="RicercaServlet">
-            <button type="submit" value="Cerca" class="cerca" style="margin-right: 30px;
-    margin-top: 8px;
-    width: 32px;
-    height: 32px;
-    margin-left: 3px;
-    float: right;"><i class="fa fa-search"></i></button>
-            <input type="text" placeholder="Cerca per nome" name="search" class="nomeProdotto" style="padding: 6px;
-    font-size: 17px;
-    border: none;
-    margin-left: 3px;
-    margin-right: auto;
-    margin-top: 8px;
-    width: 15em;
-    float: right;">
-        </form>
-    </div>
 </div>
 </body>
 </html>

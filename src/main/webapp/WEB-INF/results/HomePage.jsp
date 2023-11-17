@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="ParteCSS/CategorieProdotti.css">
     <link rel="stylesheet" href="ParteCSS/TemplateProdotti.css">
@@ -17,7 +18,7 @@
         int n = (int) request.getAttribute("Valore");
     %>
     <script>
-        function myFunction() {
+    function myFunction() {
             var x = document.getElementById("myTopnav");
             if (x.className === "topnav") {
                 x.className += " responsive";
@@ -26,52 +27,46 @@
             }
         }
 
-        document.getElementById('searchForm').addEventListener('submit', function(event){
+    function prodottiTemplate(prod){
+        return `
+                    <div class="prodotti">
+                            <a href="RicercaServlet?search=`+ prod.nomeProd+`">
+                                <h2 class="prod-name">`+prod.nomeProd+` </a><span class="categoria">(`+prod.nomeCategoria+`)</span></h2>
+                            <p><strong>Prezzo:</strong>`+prod.prezzo+`</p>
+                            <h4>Descrizione</h4>
+                            <p>`+prod.descrizione+`
+                    </div>
+                    `;
+    }
+
+    window.addEventListener("load", function(event){
+        document.getElementById('searchButton').addEventListener('click', function(event){
             event.preventDefault();
             var searchValue = document.querySelector('input[name="search"]').value;
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'FindProductServlet?search=' + searchValue, true);
             xhr.onload = function() {
                 if(xhr.status == 200) {
-                    var risultati = JSON.parse(xhr.responseText);
-                    var risultatiDiv = document.getElementById('risultatiRicerca');
-                    risultatiDiv.innerHTML = '';
-                    for(var i = 0; i < risultati.length; i++) {
-                        var risultato = risultati[i];
-                        var elementoRisultato = document.createElement('p');
-                        elementoRisultato.textContent = risultato;
-                        risultatiDiv.appendChild(elementoRisultato);
-                    }
+                    var risultati = JSON.parse(xhr.response);
+                    document.getElementById('risultatiRicerca').innerHTML = `
+                        <h1 class="title">Prodotti (`+ risultati.length + ` risultati)</h1>
+                        ` + risultati.map(prodottiTemplate).join("")+ `
+                    `;
+                    nascondiDiv();
                 } else {
                     console.error('Si è verificato un errore: ' + xhr.status);
                 }
             };
             xhr.send();
+            return false;
         });
+    })
 
+    function nascondiDiv(){
+        var divNascosto= document.getElementById('divProdotti');
+        divNascosto.style.display = 'none';
+    }
 
-        /*
-       ------ come visualizzare i prodotti -----
-       function prodottiTemplate(prod){
-            return `
-                    <div class="prodotti">
-                            <a href="RicercaServlet?search=${prod.idProdotto}">
-                                <img class="prod-photo" src="/immagini/${prod.idProdotto}.jpg">
-                            </a>
-                            <h2 class="prod-name">${prod.nomeProd} <span class="categoria">(${prod.nomeCategoria})</span></h2>
-                            <p><strong>Prezzo:</strong>${prod.prezzo}</p>
-                            <h4>Descrizione</h4>
-                            <p>${prod.descrizione}
-                    </div>
-                    `;
-        }
-
-document.getElementById('risultatiRicerca').innerHTML = `
-                        <h1 class="title">Prodotti (${risultati.length} risultati)</h1>
-                        ${risultati.map(prodottiTemplate).join("")}
-                    `;
-
-         */
     </script>
     <style>
         @media screen and (max-width: 1482px) {
@@ -192,8 +187,8 @@ document.getElementById('risultatiRicerca').innerHTML = `
         </div>
         <%}%>
         <div class="search-container">
-            <form id="searchForm" action="FindProductServlet">
-                <button type="submit" value="Cerca" class="cerca" style="margin-right: 30px;
+            <div id="searchForm">
+                <button value="Cerca" class="cerca" id="searchButton" style="margin-right: 30px;
         margin-top: 8px;
         width: 32px;
         height: 32px;
@@ -207,11 +202,11 @@ document.getElementById('risultatiRicerca').innerHTML = `
         margin-top: 8px;
         width: 15em;
         float: right;">
-            </form>
+            </div>
         </div>
     </div>
     <div id="risultatiRicerca"></div>
-    <div class="content">
+    <div class="content" id="divProdotti">
         <%
             for (int i = 0; i <6; i++,n--) {
                String directory="immagini/fotoNonDisponibile.jpg";

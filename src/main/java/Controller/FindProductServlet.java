@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -32,9 +33,11 @@ public class FindProductServlet extends HttpServlet {
 
         Gson gson = new Gson();
         String risultatiJson =  gson.toJson(prodottiRicerca);
+
         response.setContentType("application/json");
-        PrintWriter out = response.getWriter();
-        out.println(risultatiJson);
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write(risultatiJson);
+
 
     }
 
