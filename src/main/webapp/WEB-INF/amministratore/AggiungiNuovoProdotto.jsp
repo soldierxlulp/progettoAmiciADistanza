@@ -66,7 +66,7 @@
     </style>
 </head>
 <body>
-<form method="post" enctype="multipart/form-data" action="AggiuntaProdottoServlet">
+<form method="post" action="AggiuntaProdottoServlet">
 
     <table>
         <tr>
