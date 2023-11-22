@@ -27,6 +27,45 @@
             }
         }
 
+    function nascondiDiv(){
+        var divNascosto= document.getElementById('divProdotti');
+        divNascosto.style.display = 'none';
+    }
+
+    function prodottiTemplate(prod){
+        return `
+                    <div class="prodotti">
+                            <a href="RicercaServlet?search=`+ prod.nomeProd+`">
+                                <h2 class="prod-name">`+prod.nomeProd+` </a><span class="categoria">(`+prod.nomeCategoria+`)</span></h2>
+                            <p><strong>Prezzo:</strong>`+prod.prezzo+`</p>
+                            <h4>Descrizione</h4>
+                            <p>`+prod.descrizione+`
+                    </div>
+                    `;
+    }
+
+    window.addEventListener("load", function(event){
+        document.getElementById('searchButton').addEventListener('click', function(event){
+            event.preventDefault();
+            var searchValue = document.querySelector('input[name="search"]').value;
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'FindProductServlet?search=' + searchValue, true);
+            xhr.onload = function() {
+                if(xhr.status == 200) {
+                    var risultati = JSON.parse(xhr.response);
+                    document.getElementById('risultatiRicerca').innerHTML = `
+                        <h1 class="title">Prodotti (`+ risultati.length + ` risultati)</h1>
+                        ` + risultati.map(prodottiTemplate).join("")+ `
+                    `;
+                    nascondiDiv();
+                } else {
+                    console.error('Si è verificato un errore: ' + xhr.status);
+                }
+            };
+            xhr.send();
+            return false;
+        });
+    })
     </script>
     <style>
         @media screen and (max-width: 1482px) {
