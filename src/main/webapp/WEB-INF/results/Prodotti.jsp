@@ -43,7 +43,7 @@
         <div class="info">
             <b style="text-align: center;"><%=p.getNomeProd()%>
             </b><br>
-            <b style="text-align: center;color: red"><%=p.getPrezzo()%> €</b>
+            <b style="text-align: center;color: red"><%=String.format("%.2f",p.getPrezzo())%> €</b>
         </div>
     </div>
 </div>

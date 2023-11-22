@@ -65,7 +65,7 @@
             <th>
                 <h1> <%=p.getNomeProd()%>
                 </h1>
-                <h2><%=p.getPrezzo()%>€</h2>
+                <h2><%=String.format("%.2f",p.getPrezzo())%>€</h2>
             </th>
         </tr>
         <% if (p.getQuantita() == 0) {%>

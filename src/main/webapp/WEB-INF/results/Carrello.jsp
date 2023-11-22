@@ -43,7 +43,7 @@
                 <img src="<%=directory%>" style="width: 250px; height: 250px; filter:drop-shadow(0 3px 5px rgba(0,0,0,.7));">
             </div>
                     <div class="info">
-                        <b style="text-align: center;color: red;"><%=carrello.get(i).getPrezzo()%> €</b> <br>
+                        <b style="text-align: center;color: red;"><%=String.format("%.2f",carrello.get(i).getPrezzo())%> €</b> <br>
                         <b style="text-align: center;">Quantità articoli:<%=qList.get(i)%></b>
                         <% if (u!=null) {%>
                             <button class="cart"><a style="text-decoration: none; color: white; text-underline: none" href="CarrelloServlet?action=rimuovi<%=carrello.get(i).getIdProdotto()%>"><i class="fa fa-trash-o"></i></a></button>
@@ -63,7 +63,7 @@
     <tr>
         <th>
             <h1>Check-out ordine</h1>
-            <h2>Costo totale: <%=prezzo%>€</h2>
+            <h2>Costo totale: <%=String.format("%.2f",prezzo)%>€</h2>
             <b><p>Le consegne sono previste per un limite dai 7 ai 30 giorni lavorativi</p></b>
         </th>
     </tr>

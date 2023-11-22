@@ -136,7 +136,7 @@
         </div>
         <center>
             <p><b>Quantità disponibile:<%=prodottoModifica.getQuantita()%></b></p>
-            <p><b>Prezzo Attuale: <%=prodottoModifica.getPrezzo()%>€</b></p>
+            <p><b>Prezzo Attuale: <%=String.format("%.2f",prodottoModifica.getPrezzo())%>€</b></p>
         </center>
 
     <table  id="tabella"  class="table-prodotto">

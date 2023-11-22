@@ -33,7 +33,7 @@
         </div>
         <div class="info">
             <p><%=prodEsauriti.get(i).getNomeProd()%></p>
-            <p>Prezzo:<%=prodEsauriti.get(i).getPrezzo()%></p>
+            <p>Prezzo:<%=String.format("%.2f",prodEsauriti.get(i).getPrezzo())%></p>
             <p style="color: red">Prodotto Esaurito</p>
         </div>
     </div>

@@ -40,7 +40,7 @@
         </div>
         <div class="info">
             <p>Nome Prodotto: <%=riepilogoProdotti.get(i).getNomeProd()%></p>
-            <p>Prezzo: <%=riepilogoProdotti.get(i).getPrezzo()%></p>
+            <p>Prezzo: <%=String.format("%.2f",riepilogoProdotti.get(i).getPrezzo())%></p>
             <p>Quantià ordinata: <%=riepilogoProdotti.get(i).getQuantitaAcquistata()%></p>
             <p>Via:  <%=riepilogoProdotti.get(i).getVia()%></p>
             <p>Città: <%=riepilogoProdotti.get(i).getCitta()%></p>
