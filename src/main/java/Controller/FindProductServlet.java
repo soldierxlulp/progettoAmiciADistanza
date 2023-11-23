@@ -35,26 +35,11 @@ public class FindProductServlet extends HttpServlet {
         Gson gson = new Gson();
         String risultatiJson =  gson.toJson(prodottiRicerca);
 
-        byte[] jsonDataBytes = risultatiJson.getBytes("UTF-8");
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-        response.setContentLength(jsonDataBytes.length);
-
-        OutputStream outStream = response.getOutputStream();
-        outStream.write(jsonDataBytes);
-        outStream.flush();
-        outStream.close();
-
-
-        /*
-        Gson gson = new Gson();
-        String risultatiJson =  gson.toJson(prodottiRicerca);
-
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         response.getWriter().write(risultatiJson);
 
-         */
+
 
     }
 
