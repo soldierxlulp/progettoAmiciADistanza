@@ -76,27 +76,5 @@ public class CarrelloServlet extends HttpServlet {
             dispatcher.forward(request, response);
         }
 
-        if ((request.getParameter("action").contains("rimuovi")))
-        {
-            String x[] = request.getParameter("action").split("rimuovi");
-            String val = x[1];
-            for (int i = 0; i < cartList.size(); i++)
-            {
-                if (cartList.get(i).getIdProdotto().equalsIgnoreCase(val))
-                {
-                    cartList.remove(i);
-                    qList.remove(i);
-                    session.setAttribute("cart-list", cartList);
-                    session.setAttribute("quantitaArticoli",qList);
-                }
-            }
-            RequestDispatcher dispatcher1 = request.getRequestDispatcher("HomePage");
-            dispatcher1.forward(request, response);
-        }
-        else
-        {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/Login.jsp");
-            dispatcher.forward(request, response);
-        }
     }
 }

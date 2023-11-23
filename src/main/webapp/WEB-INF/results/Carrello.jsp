@@ -46,9 +46,9 @@
                         <b style="text-align: center;color: red;"><%=String.format("%.2f",carrello.get(i).getPrezzo())%> €</b> <br>
                         <b style="text-align: center;">Quantità articoli:<%=qList.get(i)%></b>
                         <% if (u!=null) {%>
-                            <button class="cart"><a style="text-decoration: none; color: white; text-underline: none" href="CarrelloServlet?action=rimuovi<%=carrello.get(i).getIdProdotto()%>"><i class="fa fa-trash-o"></i></a></button>
+                            <button class="cart"><a style="text-decoration: none; color: white; text-underline: none" href="RimuoviCarrelloServlet?action=rimuovi<%=carrello.get(i).getIdProdotto()%>"><i class="fa fa-trash-o"></i></a></button>
                         <% } else {%>
-                        <button class="cart"><a style="text-decoration: none; color: white; text-underline: none" href="CarrelloVeloceServlet?action=rimuovi<%=carrello.get(i).getIdProdotto()%>"><i class="fa fa-trash-o"></i></a></button>
+                        <button class="cart"><a style="text-decoration: none; color: white; text-underline: none" href="RimuoviCarrelloServlet?action=rimuovi<%=carrello.get(i).getIdProdotto()%>"><i class="fa fa-trash-o"></i></a></button>
                         <%}%>
                         <% if(qList.get(i)>carrello.get(i).getQuantita())
                         { f=true;%>

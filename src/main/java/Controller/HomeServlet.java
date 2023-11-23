@@ -29,6 +29,7 @@ public class HomeServlet extends HttpServlet {
             request.setAttribute("prodotti", prodotti);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/HomePage.jsp");
             dispatcher.forward(request, response);
+            return;
         }
         else if(request.getParameter("valore").equals("home")) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/amministratore/VediTuttiIProdotti.jsp");
