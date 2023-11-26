@@ -132,7 +132,7 @@
         <h1><%=prodottoModifica.getNomeProd()%></h1>
         <div class="image">
 
-            <center><img style="border-style: solid;border-width: 2px;" src="<%=directory%>"></center>
+            <center><img style="width: 300px;height: 300px" src="<%=directory%>"></center>
         </div>
         <center>
             <p><b>Quantità disponibile:<%=prodottoModifica.getQuantita()%></b></p>
