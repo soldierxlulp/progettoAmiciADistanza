@@ -66,7 +66,7 @@
 
     </script>
 </head>
-<a href="/Progetto-1.0-SNAPSHOT/HomePage"><img src="immagini/logosito.png" class="sfondo logo"> </a>
+<a href="HomePage"><img src="immagini/logosito.png" class="sfondo logo"> </a>
 <body>
 
 <table>
