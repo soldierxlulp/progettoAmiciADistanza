@@ -209,7 +209,7 @@
         <%
             for (int i = 0; i <6; i++,n--) {
                String directory="immagini/fotoNonDisponibile.jpg";
-               if(Integer.parseInt(prod.get(n).getIdProdotto().substring(3))<41)
+               if(Integer.parseInt(prod.get(n-1).getIdProdotto().substring(3))<41)
 
                 {
                     directory = "immagini/" + prod.get(n).getIdProdotto() + ".jpg";
