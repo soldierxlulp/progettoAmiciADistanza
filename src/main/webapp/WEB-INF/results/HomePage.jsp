@@ -107,7 +107,7 @@
     </style>
 </head>
 <body>
-    <a href="/Progetto_war/HomePage"><img src="immagini/logosito.png" class="sfondo logo"> </a>
+    <a href="/Progetto-1.0-SNAPSHOT/HomePage"><img src="immagini/logosito.png" class="sfondo logo"> </a>
 
     <div class="topnav" id="myTopnav">
         <div class="dropdown">
