@@ -120,7 +120,7 @@
     </script>
 </head>
 <body>
-<a href="HomePage"><img src="immagini/logosito.png" class="sfondo"> </a>
+<a href="/Progetto_war/HomePage"><img src="immagini/logosito.png" class="sfondo"> </a>
 <form method="post" action="RegistrazioneServlet">
     <table>
         <tr>
